@@ -1,29 +1,82 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Divider, Heading, Logo, Text } from "@/design-system";
+import { Shell } from "@/showcase/shell";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Catch Your Dreamz Design System" },
+      {
+        name: "description",
+        content:
+          "Tokens, typography and components for the Catch Your Dreamz brand — gold, ink and script, built for consistent product work.",
+      },
+      { property: "og:title", content: "Catch Your Dreamz Design System" },
+      {
+        property: "og:description",
+        content: "The gold-and-ink design language behind Catch Your Dreamz.",
+      },
+    ],
+  }),
+  component: Overview,
 });
 
-// Placeholder route. Add pages as files in src/routes/.
-function Index() {
+function Overview() {
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#fcfbf8",
-      }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <Shell>
+      <div className="flex flex-col items-center text-center">
+        <Logo variant="detailed" size="lg" />
+        <Heading level={1} variant="script" className="mt-6">
+          Catch Your Dreamz
+        </Heading>
+        <Text tone="muted" className="mt-4 max-w-xl">
+          A mystical-elegant design language: antique gold on ink, fine script headlines and
+          delicate line work — drawn straight from the brand mark.
+        </Text>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Button asChild={false} onClick={() => undefined}>
+            <span>Version 0.1</span>
+          </Button>
+          <Badge tone="neutral">Starter tokens</Badge>
+          <Badge>9 components</Badge>
+        </div>
+      </div>
+
+      <Divider ornament className="my-14" />
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {[
+          {
+            title: "Colors",
+            body: "Antique gold scale, ink neutrals and semantic surfaces for light and dark.",
+            to: "/colors",
+          },
+          {
+            title: "Typography",
+            body: "Cormorant Garamond for display, Great Vibes for the wordmark, Jost for body.",
+            to: "/typography",
+          },
+          {
+            title: "Components",
+            body: "Buttons, fields, cards, badges, dividers and typography primitives.",
+            to: "/components",
+          },
+        ].map((item) => (
+          <Link key={item.to} to={item.to} className="outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
+            <Card className="h-full transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.body}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <span className="font-sans text-[0.6rem] cyd-tracked text-cyd-gold-700 dark:text-cyd-gold-300">
+                  Explore
+                </span>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </Shell>
   );
 }
