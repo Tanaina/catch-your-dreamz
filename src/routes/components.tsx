@@ -264,14 +264,15 @@ function Components() {
             <Snippet code={`<Text tone="muted" size="sm">Dispatch within three working days.</Text>`} />
           </Block>
 
-          <Block id="logo" title="Logo" blurb="The brand mark in its three supplied cuts.">
-            <Spec label="variant: gold | detailed | mono, size: sm | md | lg">
-              <Logo variant="gold" size="sm" />
-              <Logo variant="detailed" size="md" />
-              <Logo variant="mono" size="md" />
+          <Block id="logo" title="Logo" blurb="The circular brand mark — the one canonical logo.">
+            <Spec label="size: sm | md | lg">
+              <Logo size="sm" />
+              <Logo size="md" />
+              <Logo size="lg" />
             </Spec>
-            <Snippet code={`<Logo variant="detailed" size="lg" />`} />
+            <Snippet code={`<Logo size="lg" />`} />
           </Block>
+
 
           <section className="rounded-lg border border-border bg-surface p-8">
             <Heading level={3}>In context</Heading>
