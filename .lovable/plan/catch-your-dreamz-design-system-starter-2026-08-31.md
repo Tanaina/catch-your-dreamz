@@ -14,13 +14,13 @@ Build the first version of the design system from the shared brand references: t
 1. **Tokens** — colors (brand, semantic surfaces, text, border, states), typography scale, spacing, radius, and shadows, defined as CSS variables plus Tailwind v4 `@theme` mapping so both the preview app and consumer projects get them from one import.
 2. **Brand assets** — the uploaded logo files committed under `src/assets/logos/` byte-for-byte and used by the showcase; favicon set from the mark.
 3. **Starter components** (each token-driven, with variants, keyboard-accessible, ref-forwarding, `className` merged):
-   - Button (primary gold, outline, ghost, link; sm/md/lg; loading + disabled)
-   - Input, Textarea, Label, and a Field wrapper with help/error text
-   - Card (with header/title/description/content/footer)
-   - Badge / Tag
-   - Divider with an optional ornamental gold rule
-   - Heading + Text typography primitives
-   - Logo component rendering the brand mark
+  - Button (primary gold, outline, ghost, link; sm/md/lg; loading + disabled)
+  - Input, Textarea, Label, and a Field wrapper with help/error text
+  - Card (with header/title/description/content/footer)
+  - Badge / Tag
+  - Divider with an optional ornamental gold rule
+  - Heading + Text typography primitives
+  - Logo component rendering the brand mark
 4. **Barrel** — `src/index.ts` re-exporting every component so attached projects can import them.
 5. **Showcase** — a preview-only site with shared navigation: Overview, Colors, Typography, Components (searchable sidebar, every variant and state, realistic Catch Your Dreamz copy). Light/dark toggle if both themes are defined.
 6. **Knowledge** — `.lovable/meta.yaml` filled in (react / tailwind / local) and `.lovable/system.md` seeded with the design philosophy, hard constraints (tokens not raw values, no ad-hoc inline styles, accessibility baseline), and usage conventions.

@@ -1,0 +1,157 @@
+/*
+ * Catch Your Dreamz — design system theme.
+ * Single import that gives a project the full token set.
+ * Consumers: @import "./design-system/styles/theme.css";
+ */
+
+:root {
+  /* Brand gold */
+  --cyd-gold-50: #fdf9ee;
+  --cyd-gold-100: #f8efd4;
+  --cyd-gold-200: #efdca6;
+  --cyd-gold-300: #e3c571;
+  --cyd-gold-400: #d4af37;
+  --cyd-gold-500: #bf9a2c;
+  --cyd-gold-600: #9c7c22;
+  --cyd-gold-700: #765d1a;
+
+  /* Ink + neutrals */
+  --cyd-ink-900: #101010;
+  --cyd-ink-800: #1c1c1c;
+  --cyd-ink-700: #2e2e2e;
+  --cyd-ink-500: #5f5f5f;
+  --cyd-ink-400: #8a8a8a;
+  --cyd-ink-200: #d8d5cd;
+  --cyd-ink-100: #ece9e2;
+  --cyd-ink-50: #f7f5f0;
+  --cyd-white: #ffffff;
+
+  /* Support hues */
+  --cyd-success: #3f7d5c;
+  --cyd-warning: #b4761f;
+  --cyd-danger: #a63a3a;
+
+  /* Semantic — light theme */
+  --background: var(--cyd-ink-50);
+  --surface: var(--cyd-white);
+  --surface-muted: var(--cyd-ink-100);
+  --foreground: var(--cyd-ink-900);
+  --foreground-muted: var(--cyd-ink-500);
+  --foreground-onbrand: var(--cyd-ink-900);
+  --primary: var(--cyd-gold-400);
+  --primary-hover: var(--cyd-gold-500);
+  --primary-soft: var(--cyd-gold-100);
+  --border: var(--cyd-ink-200);
+  --border-strong: var(--cyd-gold-300);
+  --ring: var(--cyd-gold-500);
+  --success: var(--cyd-success);
+  --warning: var(--cyd-warning);
+  --danger: var(--cyd-danger);
+
+  /* Radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  /* Elevation — warm, gold-tinted */
+  --shadow-sm: 0 1px 2px rgba(118, 93, 26, 0.08);
+  --shadow-md: 0 6px 18px -6px rgba(118, 93, 26, 0.18);
+  --shadow-lg: 0 22px 48px -18px rgba(118, 93, 26, 0.28);
+  --shadow-glow: 0 0 0 1px var(--cyd-gold-200), 0 12px 30px -14px rgba(212, 175, 55, 0.55);
+}
+
+.dark {
+  --background: var(--cyd-ink-900);
+  --surface: var(--cyd-ink-800);
+  --surface-muted: var(--cyd-ink-700);
+  --foreground: var(--cyd-ink-50);
+  --foreground-muted: var(--cyd-ink-400);
+  --foreground-onbrand: var(--cyd-ink-900);
+  --primary: var(--cyd-gold-300);
+  --primary-hover: var(--cyd-gold-200);
+  --primary-soft: rgba(212, 175, 55, 0.16);
+  --border: #3a3a3a;
+  --border-strong: var(--cyd-gold-600);
+  --ring: var(--cyd-gold-300);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 22px 48px -18px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 0 1px var(--cyd-gold-600), 0 12px 30px -14px rgba(212, 175, 55, 0.4);
+}
+
+@theme inline {
+  --color-cyd-gold-50: var(--cyd-gold-50);
+  --color-cyd-gold-100: var(--cyd-gold-100);
+  --color-cyd-gold-200: var(--cyd-gold-200);
+  --color-cyd-gold-300: var(--cyd-gold-300);
+  --color-cyd-gold-400: var(--cyd-gold-400);
+  --color-cyd-gold-500: var(--cyd-gold-500);
+  --color-cyd-gold-600: var(--cyd-gold-600);
+  --color-cyd-gold-700: var(--cyd-gold-700);
+  --color-cyd-ink-900: var(--cyd-ink-900);
+  --color-cyd-ink-800: var(--cyd-ink-800);
+  --color-cyd-ink-700: var(--cyd-ink-700);
+  --color-cyd-ink-500: var(--cyd-ink-500);
+  --color-cyd-ink-400: var(--cyd-ink-400);
+  --color-cyd-ink-200: var(--cyd-ink-200);
+  --color-cyd-ink-100: var(--cyd-ink-100);
+  --color-cyd-ink-50: var(--cyd-ink-50);
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-onbrand: var(--foreground-onbrand);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", "Cormorant Garamond", cursive;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility cyd-tracked {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+@utility cyd-rule-gold {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--cyd-gold-400),
+    transparent
+  );
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
