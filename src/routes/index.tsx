@@ -33,10 +33,8 @@ function Overview() {
           A mystical-elegant design language: antique gold on ink, fine script headlines and
           delicate line work — drawn straight from the brand mark.
         </Text>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button asChild={false} onClick={() => undefined}>
-            <span>Version 0.1</span>
-          </Button>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Badge solid>Version 0.1</Badge>
           <Badge tone="neutral">Starter tokens</Badge>
           <Badge>9 components</Badge>
         </div>
