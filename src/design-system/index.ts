@@ -36,4 +36,4 @@ export type {
 } from "./components/typography";
 
 export { Logo } from "./components/logo";
-export type { LogoProps, LogoVariant, LogoSize } from "./components/logo";
+export type { LogoProps, LogoSize } from "./components/logo";

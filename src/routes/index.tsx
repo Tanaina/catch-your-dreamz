@@ -25,7 +25,7 @@ function Overview() {
   return (
     <Shell>
       <div className="flex flex-col items-center text-center">
-        <Logo variant="detailed" size="lg" />
+        <Logo size="lg" />
         <Heading level={1} variant="script" className="mt-6">
           Catch Your Dreamz
         </Heading>
