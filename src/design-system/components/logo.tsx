@@ -11,9 +11,9 @@ export interface LogoProps extends Omit<HTMLAttributes<HTMLImageElement>, "child
 }
 
 const sizes: Record<LogoSize, string> = {
-  sm: "size-12",
-  md: "size-24",
-  lg: "size-44",
+  sm: "h-16 w-auto",
+  md: "h-32 w-auto",
+  lg: "h-64 w-auto",
 };
 
 /**
