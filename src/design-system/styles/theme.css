@@ -15,16 +15,18 @@
   --cyd-gold-600: #9c7c22;
   --cyd-gold-700: #765d1a;
 
-  /* Softer bronze-gold — reserved for the dominant CTA */
-  --cyd-bronze-200: #e6d6bd;
-  --cyd-bronze-300: #cbb08a;
-  --cyd-bronze-400: #b39366;
-  --cyd-bronze-500: #97794f;
+  /* Soft champagne gold — reserved for the dominant CTA */
+  --cyd-bronze-100: #f6efe3;
+  --cyd-bronze-200: #f2e7d6;
+  --cyd-bronze-300: #d8c4a4;
+  --cyd-bronze-400: #bda87f;
+  --cyd-bronze-500: #9d8862;
 
   /* Business-card smoke greys — CTA base */
-  --cyd-smoke-200: #cfcac4;
-  --cyd-smoke-300: #b4aea8;
-  --cyd-smoke-400: #8d8781;
+  --cyd-smoke-200: #d9d5cf;
+  --cyd-smoke-300: #bdb7b0;
+  --cyd-smoke-400: #948d86;
+  --cyd-smoke-500: #6f6862;
   --cyd-smoke-600: #55504b;
   --cyd-smoke-700: #3d3936;
 
