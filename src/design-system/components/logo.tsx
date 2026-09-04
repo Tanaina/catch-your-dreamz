@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { cn } from "../lib/cn";
-import circleMark from "@/assets/logos/cyd-logo-circle.png";
+import circleMark from "../../assets/logos/cyd-logo-circle.jpg";
 
 export type LogoSize = "sm" | "md" | "lg";
 
@@ -11,9 +11,9 @@ export interface LogoProps extends Omit<HTMLAttributes<HTMLImageElement>, "child
 }
 
 const sizes: Record<LogoSize, string> = {
-  sm: "h-16 w-auto",
-  md: "h-32 w-auto",
-  lg: "h-64 w-auto",
+  sm: "size-12",
+  md: "size-24",
+  lg: "size-44",
 };
 
 /**

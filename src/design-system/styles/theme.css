@@ -2,6 +2,8 @@
  * Catch Your Dreamz — design system theme.
  * Single import that gives a project the full token set.
  * Consumers: @import "./design-system/styles/theme.css";
+ * Consumers must also load Cormorant Garamond, Great Vibes and Jost with a
+ * <link> tag in the document head — never @import a font URL in CSS.
  */
 
 :root {
@@ -63,12 +65,17 @@
   --warning: var(--cyd-warning);
   --danger: var(--cyd-danger);
 
-  /* Dominant CTA — light warm smoke base, champagne accent (independent of --primary) */
-  --cta: var(--cyd-smoke-500);
-  --cta-hover: var(--cyd-smoke-600);
-  --cta-foreground: var(--cyd-bronze-200);
-  --cta-border: var(--cyd-bronze-400);
-  --cta-glitter: var(--cyd-bronze-300);
+  /* Dominant CTA — rich antique gold (independent of --primary) */
+  --cyd-ctagold-200: #f3e4bd;
+  --cyd-ctagold-300: #dcc27f;
+  --cyd-ctagold-400: #c0a15a;
+  --cyd-ctagold-500: #a9873f;
+  --cyd-ctagold-600: #8b6d2e;
+  --cta: var(--cyd-ctagold-400);
+  --cta-hover: var(--cyd-ctagold-500);
+  --cta-foreground: var(--cyd-ink-900);
+  --cta-border: var(--cyd-ctagold-600);
+  --cta-glitter: var(--cyd-ctagold-200);
 
 
   /* Radius */
@@ -98,11 +105,11 @@
   --border: #3a3a3a;
   --border-strong: var(--cyd-gold-600);
   --ring: var(--cyd-gold-300);
-  --cta: var(--cyd-smoke-600);
-  --cta-hover: var(--cyd-smoke-500);
-  --cta-foreground: var(--cyd-bronze-200);
-  --cta-border: var(--cyd-bronze-500);
-  --cta-glitter: var(--cyd-bronze-300);
+  --cta: var(--cyd-ctagold-300);
+  --cta-hover: var(--cyd-ctagold-400);
+  --cta-foreground: var(--cyd-ink-900);
+  --cta-border: var(--cyd-ctagold-500);
+  --cta-glitter: var(--cyd-ctagold-200);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
@@ -195,29 +202,31 @@
 /* Falling gold-glitter for the dominant CTA */
 @keyframes cyd-glitter-fall {
   0% {
-    transform: translateY(-45%) scale(0.4);
+    top: -20%;
+    transform: translateX(0) scale(0.35);
     opacity: 0;
   }
-  18% {
+  12% {
     opacity: 1;
   }
-  75% {
-    opacity: 0.85;
+  70% {
+    opacity: 0.95;
   }
   100% {
-    transform: translateY(145%) scale(0.9);
+    top: 118%;
+    transform: translateX(var(--cyd-drift, 3px)) scale(0.9);
     opacity: 0;
   }
 }
 
 @utility cyd-glitter-particle {
   position: absolute;
-  top: 0;
+  top: -20%;
   width: 2px;
   height: 2px;
   border-radius: 999px;
-  background: radial-gradient(circle, var(--cyd-bronze-200) 0%, var(--cta-glitter) 55%, transparent 100%);
-  box-shadow: 0 0 3px var(--cta-glitter);
+  background: radial-gradient(circle, #ffffff 0%, var(--cta-glitter) 45%, transparent 100%);
+  box-shadow: 0 0 4px var(--cta-glitter);
   opacity: 0;
 }
 

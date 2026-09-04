@@ -105,7 +105,7 @@ function Components() {
         </aside>
 
         <div>
-          <Block id="button" title="Button" blurb="Primary actions. Smoke-grey champagne pill by default with a falling gold-glitter hover; outline and ghost for secondary weight, link for inline actions.">
+          <Block id="button" title="Button" blurb="Primary actions. Rich antique-gold pill by default with a falling gold-glitter hover; outline and ghost for secondary weight, link for inline actions.">
             <Spec label="variant: primary | outline | ghost | link">
               <Button>Add to cart</Button>
               <Button variant="outline">Save for later</Button>
