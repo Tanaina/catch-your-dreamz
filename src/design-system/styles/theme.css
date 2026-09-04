@@ -98,8 +98,8 @@
   --border: #3a3a3a;
   --border-strong: var(--cyd-gold-600);
   --ring: var(--cyd-gold-300);
-  --cta: var(--cyd-smoke-700);
-  --cta-hover: var(--cyd-smoke-600);
+  --cta: var(--cyd-smoke-600);
+  --cta-hover: var(--cyd-smoke-500);
   --cta-foreground: var(--cyd-bronze-200);
   --cta-border: var(--cyd-bronze-500);
   --cta-glitter: var(--cyd-bronze-300);
