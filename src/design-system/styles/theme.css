@@ -15,16 +15,18 @@
   --cyd-gold-600: #9c7c22;
   --cyd-gold-700: #765d1a;
 
-  /* Softer bronze-gold — reserved for the dominant CTA */
-  --cyd-bronze-200: #e6d6bd;
-  --cyd-bronze-300: #cbb08a;
-  --cyd-bronze-400: #b39366;
-  --cyd-bronze-500: #97794f;
+  /* Soft champagne gold — reserved for the dominant CTA */
+  --cyd-bronze-100: #f6efe3;
+  --cyd-bronze-200: #f2e7d6;
+  --cyd-bronze-300: #d8c4a4;
+  --cyd-bronze-400: #bda87f;
+  --cyd-bronze-500: #9d8862;
 
   /* Business-card smoke greys — CTA base */
-  --cyd-smoke-200: #cfcac4;
-  --cyd-smoke-300: #b4aea8;
-  --cyd-smoke-400: #8d8781;
+  --cyd-smoke-200: #d9d5cf;
+  --cyd-smoke-300: #bdb7b0;
+  --cyd-smoke-400: #948d86;
+  --cyd-smoke-500: #6f6862;
   --cyd-smoke-600: #55504b;
   --cyd-smoke-700: #3d3936;
 
@@ -61,9 +63,9 @@
   --warning: var(--cyd-warning);
   --danger: var(--cyd-danger);
 
-  /* Dominant CTA — smoke base, bronze-gold accent (independent of --primary) */
-  --cta: var(--cyd-smoke-600);
-  --cta-hover: var(--cyd-smoke-700);
+  /* Dominant CTA — light warm smoke base, champagne accent (independent of --primary) */
+  --cta: var(--cyd-smoke-500);
+  --cta-hover: var(--cyd-smoke-600);
   --cta-foreground: var(--cyd-bronze-200);
   --cta-border: var(--cyd-bronze-400);
   --cta-glitter: var(--cyd-bronze-300);
@@ -96,8 +98,8 @@
   --border: #3a3a3a;
   --border-strong: var(--cyd-gold-600);
   --ring: var(--cyd-gold-300);
-  --cta: var(--cyd-smoke-700);
-  --cta-hover: var(--cyd-smoke-600);
+  --cta: var(--cyd-smoke-600);
+  --cta-hover: var(--cyd-smoke-500);
   --cta-foreground: var(--cyd-bronze-200);
   --cta-border: var(--cyd-bronze-500);
   --cta-glitter: var(--cyd-bronze-300);
@@ -141,6 +143,7 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
+  --color-cyd-bronze-100: var(--cyd-bronze-100);
   --color-cyd-bronze-200: var(--cyd-bronze-200);
   --color-cyd-bronze-300: var(--cyd-bronze-300);
   --color-cyd-bronze-400: var(--cyd-bronze-400);
@@ -148,6 +151,7 @@
   --color-cyd-smoke-200: var(--cyd-smoke-200);
   --color-cyd-smoke-300: var(--cyd-smoke-300);
   --color-cyd-smoke-400: var(--cyd-smoke-400);
+  --color-cyd-smoke-500: var(--cyd-smoke-500);
   --color-cyd-smoke-600: var(--cyd-smoke-600);
   --color-cyd-smoke-700: var(--cyd-smoke-700);
   --color-cta: var(--cta);

@@ -33,6 +33,25 @@ loud, never neon, never corporate SaaS.
 7. **Composability.** Components merge `className` with `cn()`, forward refs, and
    spread remaining props. Compose the existing components before writing a new one.
 
+## The dominant CTA
+
+The primary `Button` is deliberately NOT gold-filled: it uses the `cta-*` tokens —
+a warm smoke-grey base (`bg-cta`) drawn from the business card, soft champagne
+lettering and border (`text-cta-foreground`, `border-cta-border`), and a fine
+falling gold-glitter animation on hover (`cyd-glitter-particle` +
+`cyd-glitter-fall`, disabled under `prefers-reduced-motion`). These tokens are
+independent of `--primary`; changing the CTA never changes the gold used by
+badges, dividers, rules, focus rings or borders elsewhere. The only permitted
+inline styles in the system are the per-particle `left` / size / `animation-delay`
+values in the glitter overlay — scatter data, not design values.
+
+## The logo
+
+`src/assets/logos/cyd-logo-circle.png` is the canonical mark: the full circular
+emblem with a transparent background. Always render `<Logo />`; never redraw,
+recolour, or place it on a white plate.
+
+
 ## Typefaces
 
 - `font-script` (Great Vibes) — the wordmark and at most one hero line per page.
