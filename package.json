@@ -11,13 +11,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@tailwindcss/vite": "4.3.3",
     "clsx": "2.1.1",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "tailwind-merge": "3.6.0",
-    "tailwindcss": "4.3.3",
-    "vite-tsconfig-paths": "6.1.1"
+    "tailwindcss": "4.3.3"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
@@ -26,6 +24,7 @@
     "@tanstack/react-router": "^1.170.16",
     "@tanstack/react-start": "^1.168.26",
     "@tanstack/router-plugin": "^1.168.18",
+    "@tailwindcss/vite": "4.3.3",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
@@ -40,6 +39,7 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.16",
+    "vite-tsconfig-paths": "6.1.1",
     "zod": "^3.24.2"
   }
 }

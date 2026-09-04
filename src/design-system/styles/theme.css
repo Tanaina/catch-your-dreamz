@@ -55,8 +55,8 @@
   --foreground: var(--cyd-ink-900);
   --foreground-muted: var(--cyd-ink-500);
   --foreground-onbrand: var(--cyd-ink-900);
-  --primary: var(--cyd-gold-400);
-  --primary-hover: var(--cyd-gold-500);
+  --primary: var(--cyd-gold-300);
+  --primary-hover: var(--cyd-gold-400);
   --primary-soft: var(--cyd-gold-100);
   --border: var(--cyd-ink-200);
   --border-strong: var(--cyd-gold-300);
@@ -72,11 +72,11 @@
   --cyd-ctagold-500: #c2a15a;
   --cyd-ctagold-600: #a9884a;
   --cyd-ctagold-700: #8d6f38;
-  /* Primary CTA: filled with a sophisticated antique gold. */
-  --cta: var(--cyd-ctagold-500);
-  --cta-hover: var(--cyd-ctagold-600);
+  /* Primary CTA: filled with the primary brand gold. */
+  --cta: var(--cyd-gold-300);
+  --cta-hover: var(--cyd-gold-400);
   --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-ctagold-700);
+  --cta-border: var(--cyd-gold-600);
   --cta-glitter: var(--cyd-ctagold-200);
 
 
@@ -109,10 +109,10 @@
   --border: #3a3a3a;
   --border-strong: var(--cyd-gold-600);
   --ring: var(--cyd-gold-300);
-  --cta: var(--cyd-ctagold-400);
-  --cta-hover: var(--cyd-ctagold-300);
+  --cta: var(--cyd-gold-300);
+  --cta-hover: var(--cyd-gold-200);
   --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-ctagold-600);
+  --cta-border: var(--cyd-gold-500);
   --cta-glitter: var(--cyd-ctagold-200);
 
 
