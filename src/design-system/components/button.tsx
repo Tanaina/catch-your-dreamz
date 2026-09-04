@@ -81,21 +81,27 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   );
 });
 
-/** Deterministic scatter: left offset (%), delay (s), duration (s), size (px). */
-const PARTICLES: Array<[number, number, number, number]> = [
-  [4, 0, 1.5, 2], [11, 0.55, 1.9, 1.5], [18, 0.22, 1.3, 2.5], [25, 0.8, 1.7, 1.5],
-  [32, 0.12, 2.0, 2], [39, 0.65, 1.4, 1.5], [46, 0.35, 1.8, 2.5], [53, 0.95, 1.6, 1.5],
-  [60, 0.05, 1.5, 2], [67, 0.48, 2.0, 1.5], [74, 0.28, 1.35, 2.5], [81, 0.72, 1.75, 1.5],
-  [88, 0.18, 1.55, 2], [95, 0.6, 1.9, 1.5],
+/** Deterministic scatter across the whole button: left %, delay s, duration s, size px, drift px. */
+const PARTICLES: Array<[number, number, number, number, number]> = [
+  [2, 0.0, 1.5, 2, 4], [7, 0.62, 1.9, 1.5, -3], [12, 0.24, 1.25, 2.5, 5],
+  [17, 0.9, 1.7, 1.5, -4], [22, 0.14, 2.0, 2, 3], [27, 0.5, 1.35, 1.5, -5],
+  [32, 0.78, 1.8, 2.5, 4], [37, 0.06, 1.55, 1.5, -2], [42, 0.42, 1.95, 2, 5],
+  [47, 0.86, 1.3, 1.5, -3], [52, 0.2, 1.75, 2.5, 4], [57, 0.66, 1.5, 1.5, -5],
+  [62, 0.34, 2.0, 2, 2], [67, 0.98, 1.4, 1.5, -4], [72, 0.1, 1.85, 2.5, 5],
+  [77, 0.56, 1.6, 1.5, -3], [82, 0.3, 1.3, 2, 4], [87, 0.74, 1.9, 1.5, -2],
+  [92, 0.18, 1.65, 2.5, 3], [97, 0.46, 1.45, 1.5, -4],
+  [5, 1.1, 1.7, 1.5, 3], [20, 1.25, 1.5, 2, -3], [35, 1.05, 1.9, 1.5, 4],
+  [50, 1.3, 1.6, 2.5, -2], [65, 1.15, 1.4, 1.5, 3], [80, 1.35, 1.8, 2, -4],
+  [95, 1.2, 1.55, 1.5, 2],
 ];
 
 function Glitter() {
   return (
     <span
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+      className="pointer-events-none absolute inset-0 overflow-hidden rounded-pill opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
     >
-      {PARTICLES.map(([left, delay, duration, dot], i) => (
+      {PARTICLES.map(([left, delay, duration, dot, drift], i) => (
         <span
           key={i}
           className="cyd-glitter-particle"
@@ -103,6 +109,7 @@ function Glitter() {
             left: `${left}%`,
             width: `${dot}px`,
             height: `${dot}px`,
+            ["--cyd-drift" as string]: `${drift}px`,
             animation: `cyd-glitter-fall ${duration}s linear ${delay}s infinite`,
           }}
         />
