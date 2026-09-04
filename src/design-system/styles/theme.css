@@ -224,8 +224,8 @@
 @keyframes cyd-glitter-twinkle {
   0%,
   100% {
-    transform: rotate(0deg) scale(0.35);
-    opacity: 0.55;
+    transform: rotate(0deg) scale(0.55);
+    opacity: 0.75;
   }
   50% {
     transform: rotate(45deg) scale(1);
@@ -256,9 +256,9 @@
 .cyd-glitter-particle::before {
   background:
     linear-gradient(to right, transparent 4%, currentColor 50%, transparent 96%)
-      center / 100% 1px no-repeat,
+      center / 100% 1.5px no-repeat,
     linear-gradient(to bottom, transparent 4%, currentColor 50%, transparent 96%)
-      center / 1px 100% no-repeat;
+      center / 1.5px 100% no-repeat;
 }
 
 .cyd-glitter-particle::after {
