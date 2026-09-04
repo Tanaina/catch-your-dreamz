@@ -248,9 +248,12 @@
 .cyd-glitter-particle::after {
   content: "";
   position: absolute;
+  animation-delay: inherit;
+}
+
+.cyd-glitter-particle::before {
   inset: 0;
   animation: cyd-glitter-twinkle var(--cyd-twinkle, 1.1s) ease-in-out infinite;
-  animation-delay: inherit;
 }
 
 .cyd-glitter-particle::before {
@@ -262,9 +265,20 @@
 }
 
 .cyd-glitter-particle::after {
-  background: radial-gradient(circle, currentColor 0%, transparent 62%);
-  transform: scale(0.26);
-  filter: none;
+  inset: 40%;
+  border-radius: 999px;
+  background: currentColor;
+  animation: cyd-glitter-pulse var(--cyd-twinkle, 1.1s) ease-in-out infinite;
+}
+
+@keyframes cyd-glitter-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Tiny irregular metallic fleck — no cross, just a slanted speck. */
