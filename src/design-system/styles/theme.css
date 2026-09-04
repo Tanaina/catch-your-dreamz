@@ -63,9 +63,9 @@
   --warning: var(--cyd-warning);
   --danger: var(--cyd-danger);
 
-  /* Dominant CTA — smoke base, bronze-gold accent (independent of --primary) */
-  --cta: var(--cyd-smoke-600);
-  --cta-hover: var(--cyd-smoke-700);
+  /* Dominant CTA — light warm smoke base, champagne accent (independent of --primary) */
+  --cta: var(--cyd-smoke-500);
+  --cta-hover: var(--cyd-smoke-600);
   --cta-foreground: var(--cyd-bronze-200);
   --cta-border: var(--cyd-bronze-400);
   --cta-glitter: var(--cyd-bronze-300);
