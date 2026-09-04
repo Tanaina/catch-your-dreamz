@@ -77,7 +77,7 @@
   --cta-hover: var(--cyd-gold-300);
   --cta-foreground: var(--cyd-ink-900);
   --cta-border: var(--cyd-gold-300);
-  --cta-glitter: var(--cyd-ctagold-300);
+  --cta-glitter: var(--cyd-gold-300);
 
   /* Radius */
   --radius-xs: 0.25rem;
