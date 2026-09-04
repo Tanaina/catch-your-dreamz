@@ -71,11 +71,12 @@
   --cyd-ctagold-400: #e4cf9c;
   --cyd-ctagold-500: #d5bb7f;
   --cyd-ctagold-600: #b99f63;
+  --cyd-ctagold-700: #9a7f3c;
   --cta: var(--cyd-ctagold-400);
   --cta-hover: var(--cyd-ctagold-500);
   --cta-foreground: var(--cyd-ink-900);
   --cta-border: var(--cyd-ctagold-600);
-  --cta-glitter: var(--cyd-ctagold-600);
+  --cta-glitter: var(--cyd-ctagold-700);
 
 
   /* Radius */
@@ -109,7 +110,7 @@
   --cta-hover: var(--cyd-ctagold-300);
   --cta-foreground: var(--cyd-ink-900);
   --cta-border: var(--cyd-ctagold-600);
-  --cta-glitter: var(--cyd-ctagold-600);
+  --cta-glitter: var(--cyd-ctagold-700);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
@@ -166,6 +167,7 @@
   --color-cta-foreground: var(--cta-foreground);
   --color-cta-border: var(--cta-border);
   --color-cta-glitter: var(--cta-glitter);
+  --color-cyd-ctagold-700: var(--cyd-ctagold-700);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Great Vibes", "Cormorant Garamond", cursive;
@@ -262,7 +264,7 @@
 .cyd-glitter-particle::after {
   background: radial-gradient(circle, currentColor 0%, transparent 62%);
   transform: scale(0.4);
-  filter: drop-shadow(0 0 2px currentColor);
+  filter: drop-shadow(0 0 2px currentColor) drop-shadow(0 0 1px currentColor);
 }
 
 /* Tiny irregular metallic fleck — no cross, just a slanted speck. */
