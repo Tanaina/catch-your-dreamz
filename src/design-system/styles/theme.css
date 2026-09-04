@@ -258,9 +258,21 @@
 
 .cyd-glitter-particle::before {
   background:
-    linear-gradient(to right, transparent 4%, currentColor 50%, transparent 96%)
+    linear-gradient(
+        to right,
+        transparent 0%,
+        currentColor 38%,
+        currentColor 62%,
+        transparent 100%
+      )
       center / 100% 1.5px no-repeat,
-    linear-gradient(to bottom, transparent 4%, currentColor 50%, transparent 96%)
+    linear-gradient(
+        to bottom,
+        transparent 0%,
+        currentColor 38%,
+        currentColor 62%,
+        transparent 100%
+      )
       center / 1.5px 100% no-repeat;
 }
 
