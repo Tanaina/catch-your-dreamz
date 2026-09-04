@@ -56,11 +56,11 @@
   --foreground-muted: var(--cyd-ink-500);
   --foreground-onbrand: var(--cyd-ink-900);
   --primary: var(--cyd-gold-300);
-  --primary-hover: var(--cyd-gold-400);
+  --primary-hover: var(--cyd-gold-300);
   --primary-soft: var(--cyd-gold-100);
   --border: var(--cyd-ink-200);
   --border-strong: var(--cyd-gold-300);
-  --ring: var(--cyd-gold-500);
+  --ring: var(--cyd-gold-300);
   --success: var(--cyd-success);
   --warning: var(--cyd-warning);
   --danger: var(--cyd-danger);
@@ -74,13 +74,10 @@
   --cyd-ctagold-700: #8d6f38;
   /* Primary CTA: filled with the primary brand gold. */
   --cta: var(--cyd-gold-300);
-  --cta-hover: var(--cyd-gold-400);
+  --cta-hover: var(--cyd-gold-300);
   --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-gold-600);
-  --cta-glitter: var(--cyd-ctagold-200);
-
-
-
+  --cta-border: var(--cyd-gold-300);
+  --cta-glitter: var(--cyd-ctagold-300);
 
   /* Radius */
   --radius-xs: 0.25rem;
@@ -104,17 +101,16 @@
   --foreground-muted: var(--cyd-ink-400);
   --foreground-onbrand: var(--cyd-ink-900);
   --primary: var(--cyd-gold-300);
-  --primary-hover: var(--cyd-gold-200);
+  --primary-hover: var(--cyd-gold-300);
   --primary-soft: rgba(212, 175, 55, 0.16);
   --border: #3a3a3a;
-  --border-strong: var(--cyd-gold-600);
+  --border-strong: var(--cyd-gold-300);
   --ring: var(--cyd-gold-300);
   --cta: var(--cyd-gold-300);
-  --cta-hover: var(--cyd-gold-200);
+  --cta-hover: var(--cyd-gold-300);
   --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-gold-500);
-  --cta-glitter: var(--cyd-ctagold-200);
-
+  --cta-border: var(--cyd-gold-300);
+  --cta-glitter: var(--cyd-ctagold-300);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
@@ -197,12 +193,7 @@
 }
 
 @utility cyd-rule-gold {
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    var(--cyd-gold-400),
-    transparent
-  );
+  background-image: linear-gradient(to right, transparent, var(--cyd-gold-400), transparent);
 }
 
 /* Fairy glitter — very fine gold specks plus a few crisp star glints that
@@ -266,22 +257,10 @@
 .cyd-glitter-star::before {
   border-radius: 0;
   background:
-    linear-gradient(
-        to right,
-        transparent 0%,
-        currentColor 44%,
-        currentColor 56%,
-        transparent 100%
-      )
-      center / 100% 1px no-repeat,
-    linear-gradient(
-        to bottom,
-        transparent 0%,
-        currentColor 44%,
-        currentColor 56%,
-        transparent 100%
-      )
-      center / 1px 100% no-repeat;
+    linear-gradient(to right, transparent 0%, currentColor 44%, currentColor 56%, transparent 100%) center / 100% 1px
+      no-repeat,
+    linear-gradient(to bottom, transparent 0%, currentColor 44%, currentColor 56%, transparent 100%) center / 1px 100%
+      no-repeat;
 }
 
 .cyd-glitter-star::after {
@@ -299,5 +278,4 @@
     animation: none !important;
     opacity: 0 !important;
   }
-
 }
