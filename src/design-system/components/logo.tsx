@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { cn } from "../lib/cn";
-import circleMark from "@/assets/logos/cyd-logo-circle.jpg";
+import circleMark from "../../assets/logos/cyd-logo-circle.jpg";
 
 export type LogoSize = "sm" | "md" | "lg";
 

@@ -2,6 +2,8 @@
  * Catch Your Dreamz — design system theme.
  * Single import that gives a project the full token set.
  * Consumers: @import "./design-system/styles/theme.css";
+ * Consumers must also load Cormorant Garamond, Great Vibes and Jost with a
+ * <link> tag in the document head — never @import a font URL in CSS.
  */
 
 :root {
