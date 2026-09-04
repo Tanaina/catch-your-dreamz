@@ -27,9 +27,17 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "group bg-cta text-cta-foreground border border-cta-border shadow-sm hover:bg-cta-hover active:bg-cta rounded-pill",
   outline:
-    "border border-border-strong text-foreground hover:bg-primary-soft active:bg-cyd-gold-200 rounded-pill",
-  ghost: "text-foreground hover:bg-surface-muted active:bg-border rounded-pill",
-  link: "text-foreground underline decoration-primary underline-offset-4 hover:text-primary-hover rounded-xs",
+    "group border border-border-strong text-foreground hover:bg-primary-soft active:bg-cyd-gold-200 rounded-pill",
+  ghost: "group text-foreground hover:bg-surface-muted active:bg-border rounded-pill",
+  link: "group text-foreground underline decoration-primary underline-offset-4 hover:text-primary-hover rounded-xs",
+};
+
+/** Glitter tint per variant: the gold that already belongs to that button. */
+const glitterColor: Record<ButtonVariant, string> = {
+  primary: "var(--cta-glitter)",
+  outline: "var(--primary)",
+  ghost: "var(--primary)",
+  link: "var(--primary)",
 };
 
 const sizes: Record<ButtonSize, string> = {
@@ -73,7 +81,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       )}
       {...props}
     >
-      {variant === "primary" && <Glitter />}
+      {!disabled && !loading && (
+        <Glitter color={glitterColor[variant]} rounded={variant === "link"} />
+      )}
       {loading ? <Spinner /> : leadingIcon}
       {children}
       {trailingIcon}
@@ -81,35 +91,44 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   );
 });
 
-/** Deterministic scatter across the whole button: left %, delay s, duration s, size px, drift px. */
-const PARTICLES: Array<[number, number, number, number, number]> = [
-  [2, 0.0, 1.5, 2, 4], [7, 0.62, 1.9, 1.5, -3], [12, 0.24, 1.25, 2.5, 5],
-  [17, 0.9, 1.7, 1.5, -4], [22, 0.14, 2.0, 2, 3], [27, 0.5, 1.35, 1.5, -5],
-  [32, 0.78, 1.8, 2.5, 4], [37, 0.06, 1.55, 1.5, -2], [42, 0.42, 1.95, 2, 5],
-  [47, 0.86, 1.3, 1.5, -3], [52, 0.2, 1.75, 2.5, 4], [57, 0.66, 1.5, 1.5, -5],
-  [62, 0.34, 2.0, 2, 2], [67, 0.98, 1.4, 1.5, -4], [72, 0.1, 1.85, 2.5, 5],
-  [77, 0.56, 1.6, 1.5, -3], [82, 0.3, 1.3, 2, 4], [87, 0.74, 1.9, 1.5, -2],
-  [92, 0.18, 1.65, 2.5, 3], [97, 0.46, 1.45, 1.5, -4],
-  [5, 1.1, 1.7, 1.5, 3], [20, 1.25, 1.5, 2, -3], [35, 1.05, 1.9, 1.5, 4],
-  [50, 1.3, 1.6, 2.5, -2], [65, 1.15, 1.4, 1.5, 3], [80, 1.35, 1.8, 2, -4],
-  [95, 1.2, 1.55, 1.5, 2],
+/** Deterministic scatter across the whole button: left %, delay s, fall s, size px, drift px, twinkle s, fleck. */
+const PARTICLES: Array<[number, number, number, number, number, number, boolean]> = [
+  [3, 0.0, 1.5, 11, 5, 1.0, false], [8, 0.72, 1.15, 4, -4, 0.8, true],
+  [13, 0.28, 1.85, 9, 6, 1.3, false], [18, 1.05, 1.35, 4, -5, 0.9, true],
+  [23, 0.16, 1.65, 12, 4, 1.15, false], [28, 0.58, 1.95, 5, -6, 0.75, true],
+  [33, 0.88, 1.25, 10, 5, 1.25, false], [38, 0.08, 1.75, 4, -3, 0.85, true],
+  [43, 0.48, 1.45, 11, 6, 1.05, false], [48, 0.96, 1.9, 5, -5, 0.95, true],
+  [53, 0.22, 1.3, 9, 4, 1.2, false], [58, 0.68, 1.7, 4, -6, 0.8, true],
+  [63, 0.38, 2.0, 12, 5, 1.35, false], [68, 1.12, 1.4, 4, -4, 0.9, true],
+  [73, 0.12, 1.8, 10, 6, 1.1, false], [78, 0.62, 1.55, 5, -5, 0.85, true],
+  [83, 0.34, 1.25, 11, 4, 1.3, false], [88, 0.82, 1.95, 4, -3, 0.78, true],
+  [93, 0.2, 1.6, 9, 5, 1.15, false], [97, 0.52, 1.4, 5, -4, 0.92, true],
+  [6, 1.2, 1.7, 8, 4, 1.0, false], [21, 1.34, 1.5, 4, -5, 0.88, true],
+  [36, 1.1, 1.9, 10, 6, 1.28, false], [51, 1.4, 1.6, 4, -3, 0.82, true],
+  [66, 1.18, 1.35, 9, 5, 1.12, false], [81, 1.45, 1.85, 4, -6, 0.9, true],
+  [96, 1.26, 1.55, 8, 4, 1.05, false],
 ];
 
-function Glitter() {
+function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden rounded-pill opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+      className={cn(
+        "pointer-events-none absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-150",
+        "group-hover:opacity-100 group-focus-visible:opacity-100",
+        rounded ? "rounded-xs" : "rounded-pill",
+      )}
+      style={{ ["--cyd-glitter-color" as string]: color }}
     >
-      {PARTICLES.map(([left, delay, duration, dot, drift], i) => (
+      {PARTICLES.map(([left, delay, duration, dot, drift, twinkle, fleck], i) => (
         <span
           key={i}
-          className="cyd-glitter-particle"
+          className={cn("cyd-glitter-particle", fleck && "cyd-glitter-fleck")}
           style={{
             left: `${left}%`,
-            width: `${dot}px`,
-            height: `${dot}px`,
+            ["--cyd-dot" as string]: `${dot}px`,
             ["--cyd-drift" as string]: `${drift}px`,
+            ["--cyd-twinkle" as string]: `${twinkle}s`,
             animation: `cyd-glitter-fall ${duration}s linear ${delay}s infinite`,
           }}
         />
