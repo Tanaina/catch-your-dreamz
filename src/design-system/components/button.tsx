@@ -93,26 +93,24 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
 
 /**
  * Deterministic scatter across the whole button surface:
- * left %, top %, size px, shimmer s, delay s, star?.
- * Many tiny specks plus a few crisp 4-point star twinkles.
+ * left %, top %, size px, period s, delay s, star?, drift px.
+ * Mostly pinpoint specks with a handful of crisp star glints.
  */
-const PARTICLES: Array<[number, number, number, number, number, boolean]> = [
-  // Star twinkles (larger, cross-shaped)
-  [8, 22, 7, 0.7, 0.0, true], [22, 70, 6, 0.9, 0.3, true],
-  [36, 30, 8, 0.6, 0.55, true], [50, 62, 6, 0.8, 0.15, true],
-  [63, 26, 7, 0.7, 0.45, true], [76, 66, 6, 0.95, 0.1, true],
-  [89, 34, 8, 0.65, 0.6, true], [45, 16, 5, 0.85, 0.75, true],
-  // Fine specks (tiny shimmering dots)
-  [4, 48, 2, 0.8, 0.2, false], [11, 82, 2.5, 0.7, 0.5, false],
-  [16, 12, 2, 0.9, 0.35, false], [19, 44, 1.5, 0.6, 0.7, false],
-  [26, 18, 2.5, 0.75, 0.1, false], [29, 88, 2, 0.85, 0.45, false],
-  [33, 58, 1.5, 0.65, 0.25, false], [41, 84, 2, 0.8, 0.6, false],
-  [47, 40, 2.5, 0.7, 0.05, false], [54, 12, 2, 0.9, 0.4, false],
-  [57, 78, 1.5, 0.6, 0.15, false], [66, 50, 2.5, 0.75, 0.5, false],
-  [70, 8, 2, 0.85, 0.3, false], [73, 90, 2, 0.7, 0.65, false],
-  [80, 44, 1.5, 0.8, 0.2, false], [84, 74, 2.5, 0.65, 0.55, false],
-  [93, 16, 2, 0.9, 0.4, false], [96, 58, 2.5, 0.75, 0.1, false],
-  [14, 60, 2, 0.7, 0.68, false], [60, 38, 2, 0.85, 0.32, false],
+const PARTICLES: Array<[number, number, number, number, number, boolean, number]> = [
+  // Star glints
+  [12, 30, 6, 1.2, 0.0, true, 0], [34, 66, 5, 1.4, 0.45, true, 0],
+  [58, 26, 6, 1.1, 0.2, true, 0], [79, 62, 5, 1.3, 0.6, true, 0],
+  [92, 32, 5, 1.5, 0.35, true, 0],
+  // Pinpoint specks
+  [4, 52, 1.5, 1.1, 0.15, false, 0.6], [8, 76, 1, 1.3, 0.5, false, -0.5],
+  [17, 14, 1.5, 1.2, 0.3, false, 0.4], [21, 46, 1, 1.4, 0.7, false, -0.6],
+  [26, 84, 1.5, 1.0, 0.1, false, 0.5], [30, 20, 1, 1.3, 0.55, false, -0.4],
+  [39, 42, 1.5, 1.2, 0.25, false, 0.6], [43, 82, 1, 1.5, 0.65, false, -0.5],
+  [48, 16, 1.5, 1.1, 0.4, false, 0.4], [52, 54, 1, 1.3, 0.05, false, -0.6],
+  [62, 78, 1.5, 1.2, 0.5, false, 0.5], [66, 38, 1, 1.4, 0.2, false, -0.4],
+  [71, 12, 1.5, 1.1, 0.6, false, 0.6], [75, 48, 1, 1.3, 0.3, false, -0.5],
+  [84, 80, 1.5, 1.2, 0.1, false, 0.4], [88, 50, 1, 1.5, 0.45, false, -0.6],
+  [96, 70, 1.5, 1.1, 0.25, false, 0.5], [55, 88, 1, 1.4, 0.58, false, -0.4],
 ];
 
 function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
@@ -126,7 +124,7 @@ function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
       )}
       style={{ ["--cyd-glitter-color" as string]: color }}
     >
-      {PARTICLES.map(([left, top, dot, shimmer, delay, star], i) => (
+      {PARTICLES.map(([left, top, dot, period, delay, star, drift], i) => (
         <span
           key={i}
           className={cn("cyd-glitter-particle", star && "cyd-glitter-star")}
@@ -134,8 +132,9 @@ function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
             left: `${left}%`,
             top: `${top}%`,
             ["--cyd-dot" as string]: `${dot}px`,
-            ["--cyd-shimmer" as string]: `${shimmer}s`,
+            ["--cyd-shimmer" as string]: `${period}s`,
             ["--cyd-delay" as string]: `${delay}s`,
+            ["--cyd-drift" as string]: `${drift}px`,
           }}
         />
       ))}
