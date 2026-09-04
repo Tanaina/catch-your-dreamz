@@ -188,6 +188,43 @@
   );
 }
 
+/* Falling gold-glitter for the dominant CTA */
+@keyframes cyd-glitter-fall {
+  0% {
+    transform: translateY(-45%) scale(0.4);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(145%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@utility cyd-glitter-particle {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--cyd-bronze-200) 0%, var(--cta-glitter) 55%, transparent 100%);
+  box-shadow: 0 0 3px var(--cta-glitter);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyd-glitter-particle {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
+
+
 @layer base {
   body {
     font-family: var(--font-sans);
