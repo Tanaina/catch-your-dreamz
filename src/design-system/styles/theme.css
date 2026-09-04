@@ -263,8 +263,8 @@
 
 .cyd-glitter-particle::after {
   background: radial-gradient(circle, currentColor 0%, transparent 62%);
-  transform: scale(0.4);
-  filter: drop-shadow(0 0 2px currentColor) drop-shadow(0 0 1px currentColor);
+  transform: scale(0.26);
+  filter: none;
 }
 
 /* Tiny irregular metallic fleck — no cross, just a slanted speck. */
