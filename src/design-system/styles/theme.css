@@ -141,6 +141,20 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
+  --color-cyd-bronze-200: var(--cyd-bronze-200);
+  --color-cyd-bronze-300: var(--cyd-bronze-300);
+  --color-cyd-bronze-400: var(--cyd-bronze-400);
+  --color-cyd-bronze-500: var(--cyd-bronze-500);
+  --color-cyd-smoke-200: var(--cyd-smoke-200);
+  --color-cyd-smoke-300: var(--cyd-smoke-300);
+  --color-cyd-smoke-400: var(--cyd-smoke-400);
+  --color-cyd-smoke-600: var(--cyd-smoke-600);
+  --color-cyd-smoke-700: var(--cyd-smoke-700);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-border: var(--cta-border);
+  --color-cta-glitter: var(--cta-glitter);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Great Vibes", "Cormorant Garamond", cursive;
