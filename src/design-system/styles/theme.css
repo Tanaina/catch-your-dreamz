@@ -66,19 +66,19 @@
   --danger: var(--cyd-danger);
 
   /* Dominant CTA — rich antique gold (independent of --primary) */
-  --cyd-ctagold-200: #f9f0da;
-  --cyd-ctagold-300: #f0e2bd;
-  --cyd-ctagold-400: #e4cf9c;
-  --cyd-ctagold-500: #d5bb7f;
-  --cyd-ctagold-600: #b99f63;
-  --cyd-ctagold-700: #9a7f3c;
-  /* Primary CTA is screen-filled: same fill as the page background,
-     with gold text, border, and sparkles so it still reads as the CTA. */
-  --cta: var(--background);
-  --cta-hover: var(--background);
-  --cta-foreground: var(--primary);
-  --cta-border: var(--primary);
-  --cta-glitter: var(--primary);
+  --cyd-ctagold-200: #f7ead0;
+  --cyd-ctagold-300: #e6d3a2;
+  --cyd-ctagold-400: #d3b571;
+  --cyd-ctagold-500: #c2a15a;
+  --cyd-ctagold-600: #a9884a;
+  --cyd-ctagold-700: #8d6f38;
+  /* Primary CTA: filled with a sophisticated antique gold. */
+  --cta: var(--cyd-ctagold-500);
+  --cta-hover: var(--cyd-ctagold-600);
+  --cta-foreground: var(--cyd-ink-900);
+  --cta-border: var(--cyd-ctagold-700);
+  --cta-glitter: var(--cyd-ctagold-200);
+
 
 
 
