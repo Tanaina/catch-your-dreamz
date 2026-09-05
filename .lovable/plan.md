@@ -7,9 +7,9 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 ## Reference read (moving_dust gif)
 
 - **Pace is slow**: each star fades in, holds, and fades out over roughly 3–5 seconds; drift travel is small and slow (a few pixels over 9–15 seconds). Nothing flickers.
-- **Sparse, not packed**: around 150 particles per button, with visible gaps — the elegance comes from spacing, not density.
+- **Denser, but refined**: increase the sample's particle count enough to create a continuous fine-dust field while retaining varied spacing and clearly separated star glints.
 - **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed — dust ~1.5–3px, mid stars ~7–13px, hero stars ~15–24px.
-- **Placement**: gathered around the lower half and the edges of the pill, spilling well past the outline, with a lighter scatter over the face so the label stays readable.
+- **Placement**: the field follows the pill silhouette across its full width and height, with most particles contained within that shape and only a soft, narrow spill immediately beyond the ring. The label stays readable.
 - **Colour**: soft warm gold (`--cta-glitter` family); brightness varies by opacity only.
 - **Button styling stays exactly as it is**: the reference applies only to the glitter motion and particle appearance, not to the button face, ring, text, hover colour, or typography.
 
@@ -18,8 +18,8 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 ### 1. Particle field (button.tsx)
 
 - Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~50%, mid stars ~35%, hero stars ~15%.
-- Deterministic `PARTICLES` table rewritten to **~150 entries**, unevenly placed, weighted to the lower half and the edges, including negative / >100% positions so stars sit outside the pill.
-- The glitter layer becomes `overflow-visible` so the field bleeds past the pill edges.
+- Deterministic `PARTICLES` table rewritten with a denser distribution, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
+- The glitter layer remains visually pill-shaped: the core field is contained to the pill, with a separate restrained edge scatter extending only slightly outside the ring.
 
 ### 2. Calm animation (theme.css)
 
@@ -40,7 +40,7 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 
 - Star shape via `clip-path` polygon with a narrow waist — crisp at every size, recolours from `currentColor`.
 - All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
-- ~150 spans per button, hover-only playback — light enough to stay smooth.
+- Use the smallest particle count that faithfully matches the denser approved sample, then verify hover playback remains smooth.
 - Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, edge bleed, mixed star sizes, readable label, and the reduced-motion off state.
 
 ## Open choice
