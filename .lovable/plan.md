@@ -4,6 +4,8 @@
 
 Match the moving reference: on hover, delicate warm-gold **4-point stars in mixed sizes** appear slowly across and just beyond the pill, twinkling in and out at a calm pace while drifting gently upward, with fine dust specks between them. Unhurried and refined — never a fast, busy shimmer, never a dotted border or grid.
 
+The **current live preview is the immutable button baseline**. The earlier sample's button styling is rejected; only the glitter's appearance and movement are relevant.
+
 ## Reference read (moving_dust gif)
 
 - **Pace is slow**: each star fades in, holds, and fades out over roughly 3–5 seconds; drift travel is small and slow (a few pixels over 9–15 seconds). Nothing flickers.
@@ -32,7 +34,8 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 ### 3. Scope guardrails
 
 - Applies to all clickable button variants (primary / outline / ghost / link), as today.
-- **Glitter only.** Preserve every existing button colour and token exactly; do not change the button face, ring colour, text colour, hover colour, font, shape, size, spacing, or any other button styling or behaviour.
+- **Glitter only.** Preserve the current preview exactly: Great Vibes font and styling, text colour, ring colour and ring variants, default fill, hover fill/colour, shape, size, spacing, and every existing button token.
+- Do not copy the button face, typography, ring, or colours from any visual sample; a sample is only a reference for glitter motion.
 - Do not alter any other component or page.
 - Only `button.tsx` (particle table + Glitter renderer) and the glitter section of `theme.css` (keyframes + star rendering) are touched.
 
@@ -42,7 +45,8 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 - All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
 - Use the smallest particle count that faithfully matches the denser approved sample, then verify hover playback remains smooth.
 - Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, edge bleed, mixed star sizes, readable label, and the reduced-motion off state.
+- Compare idle and hover captures against the current preview to confirm that no non-glitter styling changed on any variant.
 
 ## Open choice
 
-The sample I just shared (v3) is the pace and density I'd build. If you want it denser or the hero stars larger, say so and I'll adjust before building.
+The replacement visual sample must use a direct capture of the current preview button as its unchanged base and add only the denser, pill-shaped glitter overlay. The earlier sample's button styling is discarded entirely.
