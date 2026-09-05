@@ -1,34 +1,42 @@
-# Reference-matched button variants
+# All-Star Fairy Dust Hover — Button Glitter Rebuild
 
 ## Goal
-Rework only the `Button` component’s visual variants to match the supplied reference, while preserving its existing sizes, loading/disabled behavior, icons, accessibility, and public API wherever possible.
 
-## Changes
-1. **Create the two reference variants**
-   - A compact script button with a thin bronze-gold pill ring.
-   - A compact script button with no visible ring.
-   - In the resting state, both use the page background with black calligraphic text and no grey or cream fill.
+Rebuild the button hover effect so every particle is an animated star (no dots, no static particles), continuously shimmering and drifting in warm bronze-gold while the button is hovered or focused — matching the "CYD Buttons with glitter" reference: fine magical fairy dust with intermittent bright star flares, organic and irregular, never a dotted border or ring arrangement.
 
-2. **Match the interaction state**
-   - Use the reference’s restrained warm cream/gold-toned fill on hover and keyboard focus.
-   - Keep the ring only on the ring variant; the no-ring variant remains borderless.
-   - Preserve the button’s proportions, current script family, label centering, and accessible focus behavior without adding unrelated decoration.
+## What changes
 
-3. **Build continuous multidirectional fairy dust**
-   - Replace the current fixed twinkle pattern with a continuously cycling bronze particle field active for the full hover/focus duration.
-   - Emit varied pinpoint flecks and fine cross-star glints from inside and immediately outside every side of the pill, with inward, diagonal, and lightly crossing paths that fill the entire width and height.
-   - Keep particles metallic bronze, irregular, fine-grained, and layered behind the label; avoid white dots, snowfall, rain, confetti, or a dotted-border effect.
-   - Stop the effect when interaction ends and provide a calm non-moving focus treatment when reduced motion is requested.
+### 1. Every particle becomes a star (button.tsx)
 
-4. **Keep the library contract intact**
-   - Retain semantic button markup, ref forwarding, `className` merging, remaining HTML props, sizes, loading state, icons, and disabled behavior.
-   - Express the two looks as named variants and keep the barrel/public typing synchronized.
-   - Update the component’s published usage example and antipattern guidance if the variant names or visual contract change.
+- Remove the pinpoint-round-speck particle type entirely; the `cyd-glitter-particle::before` round-dot rendering goes away.
+- All particles render as 4-point star glints (crossed hairline needles + tiny core), in a **mix of sizes**:
+  - tiny (~3–4px), small (~5–6px), medium (~7–8px), and 2–3 occasional larger flares (~10–12px) per button.
+- The deterministic `PARTICLES` table is rewritten: ~26–30 stars scattered across the full button surface (varied `left`/`top` percentages, deliberately uneven so no ring or grid pattern emerges).
 
-5. **Verify visually**
-   - Compare resting and active states against the attached reference on the existing Components page.
-   - Check both variants through a full hover cycle and keyboard focus, including full-surface particle coverage and immediate surrounds.
-   - Confirm disabled/loading buttons do not sparkle, reduced-motion behavior is respected, and the preview remains clean at desktop and narrow widths.
+### 2. Every star animates continuously (theme.css)
 
-## Scope guardrail
-No changes to unrelated components, pages, layout, typography system, logo, or non-button palette. Any new colour values will be button-specific tokens derived from the supplied reference.
+- No static particles: each star gets **two simultaneous infinite animations** while hovered/focused:
+  - **Shimmer/twinkle** — opacity and scale pulse with varied periods (0.8–2.2s) and staggered delays, so stars twinkle out of phase.
+  - **Drift/fall** — each star translates along its own vector (different dx/dy per star, mostly gentle downward-with-sideways drift, some upward or diagonal), 3–7s periods, so motion is organic and irregular — never a shared circular or pill-shaped path.
+- **Intermittent bright flares**: the larger stars use a longer, sharper twinkle curve (quick scale-up + full-opacity flash, then fade) so they read as occasional brilliant glints among the dust.
+- Colour: warm bronze-gold (`--cta-glitter` family — `#b08a57` light / `#d6c17a` dark), matching the reference; brightness variation comes from opacity, not extra hues.
+- Confined to the button: the glitter layer stays `absolute inset-0` with `overflow-hidden`, so stars animate within the pill (no visible ring of particles, no spill as a border).
+- Animations remain `paused` until `group-hover` / `group-focus-visible`, and `prefers-reduced-motion` still disables the effect entirely.
+
+### 3. Scope guardrails
+
+- Applies to all clickable button variants (primary / outline / ghost / link), as today.
+- No changes to button shape, sizes, typography, colours, hover fill, or any other component or page.
+- Only `button.tsx` (particle table + Glitter renderer) and the glitter section of `theme.css` (keyframes + star rendering) are touched.
+
+## Technical details
+
+- Star shape: existing cross-needle gradient technique (hard-stop linear gradients, 1px needles + inset core) — crisp at small sizes, recolours via `currentColor`.
+- All animation via `transform` + `opacity` only (GPU-cheap); each star sets CSS vars `--cyd-dx`, `--cyd-dy`, `--cyd-shimmer`, `--cyd-drift-dur`, `--cyd-delay` inline (the existing inline-style exception for particles).
+- Verification: Playwright screenshots of the components page at high DPI, idle vs hovered, confirming stars are distributed across the whole button, all mid-animation, no ring pattern, and reduced-motion off state.
+
+## Options to pick
+
+1. **Density**: ~26 stars (restrained, closest to reference) vs ~34 stars (richer dust field).
+2. **Larger flares**: subtle (max ~10px) vs prominent (max ~14px occasional hero glint).
+3. **Drift strength**: gentle (2–6px travel, dust hanging in air) vs flowing (8–14px travel, visible falling/sprinkling).
