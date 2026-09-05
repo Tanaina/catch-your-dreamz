@@ -22,15 +22,15 @@ Apart from those two things, the **current live preview is the immutable button 
 
 ### 1. Particle field (button.tsx)
 
-- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~66%, mid stars ~28%, hero stars ~6%.
-- Deterministic `PARTICLES` table rewritten with a denser distribution, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
+- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~66% (2.2–3.6px), mid stars ~28% (5–8.5px), hero stars ~6% (9.5–13px).
+- Deterministic `PARTICLES` table rewritten to ~310 in-pill stars plus ~60 edge-scatter stars, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
 - The glitter layer remains visually pill-shaped: the core field is contained to the pill, with a separate restrained edge scatter extending only slightly outside the ring.
 
 ### 2. Calm animation (theme.css)
 
 - Each star runs two slow infinite animations while hovered/focused:
-  - **Twinkle** — fade and scale in, hold at full brightness, fade out; periods **2.6–4.6s** with staggered delays up to ~3s, so stars arrive in waves rather than all at once.
-  - **Drift** — a small, slow rise (about 6–14px over 9–15s) with slight sideways variation.
+  - **Twinkle** — fade and scale in, hold at full brightness, fade out; periods **3.4–5.6s** with staggered delays, so stars arrive in waves rather than all at once.
+  - **Drift** — a small, slow rise (about 5–12px over 13–20s) with slight sideways variation.
 - No rotation flicker and no fast pulsing; only `opacity` and `transform` animate.
 - Animations stay paused until `group-hover` / `group-focus-visible`; `prefers-reduced-motion` disables the effect entirely.
 
