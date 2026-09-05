@@ -115,6 +115,9 @@ function Components() {
               <Button variant="outline">Save for Later</Button>
               <Button variant="ghost">Keep Browsing</Button>
               <Button variant="link">Size Guide</Button>
+              <Button variant="link" className="px-6 py-2 border border-cta-border">
+                Size Guide
+              </Button>
             </Spec>
             <Spec label="size: sm | md | lg">
               <Button size="sm">Small</Button>
