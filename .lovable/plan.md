@@ -11,7 +11,7 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 - **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed — dust ~1.5–3px, mid stars ~7–13px, hero stars ~15–24px.
 - **Placement**: gathered around the lower half and the edges of the pill, spilling well past the outline, with a lighter scatter over the face so the label stays readable.
 - **Colour**: soft warm gold (`--cta-glitter` family); brightness varies by opacity only.
-- **Button face on hover**: soft warm cream gradient inside the thin gold outline.
+- **Button styling stays exactly as it is**: the reference applies only to the glitter motion and particle appearance, not to the button face, ring, text, hover colour, or typography.
 
 ## What changes
 
@@ -32,7 +32,8 @@ Match the moving reference: on hover, delicate warm-gold **4-point stars in mixe
 ### 3. Scope guardrails
 
 - Applies to all clickable button variants (primary / outline / ghost / link), as today.
-- No changes to button shape, sizes, typography, colours, hover fill, or any other component or page.
+- **Glitter only.** Preserve every existing button colour and token exactly; do not change the button face, ring colour, text colour, hover colour, font, shape, size, spacing, or any other button styling or behaviour.
+- Do not alter any other component or page.
 - Only `button.tsx` (particle table + Glitter renderer) and the glitter section of `theme.css` (keyframes + star rendering) are touched.
 
 ## Technical details
