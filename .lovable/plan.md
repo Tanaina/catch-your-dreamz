@@ -1,36 +1,33 @@
-# All-Star Fairy Dust Hover — Button Glitter Rebuild
+# Elegant Star-Dust Hover — Button Glitter Rebuild
 
 ## Goal
 
-Rebuild the button hover effect so it matches the uploaded "fine dust" reference: a **dense field of very fine bronze-gold dust** — hundreds of tiny specks packed across the whole pill, brightest where they cluster — with occasional brighter 4-point star flares scattered through it. Every particle is a star/glint (no plain dots), continuously shimmering and drifting while the button is hovered or focused. Organic and irregular — never a dotted border, ring, or grid.
+Match the moving reference: on hover, delicate warm-gold **4-point stars in mixed sizes** appear slowly across and just beyond the pill, twinkling in and out at a calm pace while drifting gently upward, with fine dust specks between them. Unhurried and refined — never a fast, busy shimmer, never a dotted border or grid.
 
-## Reference read (uploaded images, incl. the bronze star-flow gif)
+## Reference read (moving_dust gif)
 
-- The dust is **fine and dense**: the mass of the effect is specks ~1–2px, not stars.
-- **Density gradient**: specks cluster thickly and thin out toward the edges — on the button this becomes densest through the middle band of the pill, softer toward the top/bottom edges and just past the pill bounds.
-- **Star flares**: a visible minority are crisp 4-point stars with long tapered needles, in mixed sizes (~5–14px), flashing brighter than the dust — like the star-flow gif, where distinct stars ride through the dust stream rather than sitting in a uniform sprinkle.
-- **Flow**: the field reads as a moving stream — particles travel along a shared gentle diagonal while twinkling, not just pulsing in place.
-- Colour: warm gold/bronze throughout (`--cta-glitter` family); brightness varies by opacity, not hue.
-
+- **Pace is slow**: each star fades in, holds, and fades out over roughly 3–5 seconds; drift travel is small and slow (a few pixels over 9–15 seconds). Nothing flickers.
+- **Sparse, not packed**: around 150 particles per button, with visible gaps — the elegance comes from spacing, not density.
+- **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed — dust ~1.5–3px, mid stars ~7–13px, hero stars ~15–24px.
+- **Placement**: gathered around the lower half and the edges of the pill, spilling well past the outline, with a lighter scatter over the face so the label stays readable.
+- **Colour**: soft warm gold (`--cta-glitter` family); brightness varies by opacity only.
+- **Button face on hover**: soft warm cream gradient inside the thin gold outline.
 
 ## What changes
 
 ### 1. Particle field (button.tsx)
 
-- Remove the round-dot particle rendering (`cyd-glitter-particle::before` solid disc) — everything renders as a star glint (crossed hairline needles + tiny core) scaled small.
-- Rewrite the deterministic `PARTICLES` table to **~400 particles**, in three tiers:
-  - **Dust (~85%)**: 1.5–3px micro-stars, tightly scattered with deliberate clustering (denser mid-band, sparser edges, some just outside the pill via negative/>100% positions — the glitter layer overflows visibly rather than clipping at the border).
-  - **Small stars (~12%)**: 4–6px.
-  - **Flares (~3%)**: 8–12px, brighter twinkle curve.
-- Positions uneven (no ring/grid); the layer switches from `overflow-hidden` to `overflow-visible` so dust bleeds slightly past the pill edges, as in the reference.
+- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~50%, mid stars ~35%, hero stars ~15%.
+- Deterministic `PARTICLES` table rewritten to **~150 entries**, unevenly placed, weighted to the lower half and the edges, including negative / >100% positions so stars sit outside the pill.
+- The glitter layer becomes `overflow-visible` so the field bleeds past the pill edges.
 
-### 2. Continuous animation (theme.css)
+### 2. Calm animation (theme.css)
 
-- Each particle runs **two simultaneous infinite animations** while hovered/focused:
-  - **Twinkle** — opacity/scale pulse, periods 0.8–2.2s, staggered delays, so the field is alive and roughly half the dust is mid-flash at any instant.
-  - **Drift** — per-particle translate vector (varied dx/dy, gentle, mostly downward-sideways, some upward/diagonal), 3–7s periods.
-- Flares use a longer, sharper curve (quick scale-up + full-opacity flash, then fade).
-- Animations stay `paused` until `group-hover` / `group-focus-visible`; `prefers-reduced-motion` disables the effect entirely.
+- Each star runs two slow infinite animations while hovered/focused:
+  - **Twinkle** — fade and scale in, hold at full brightness, fade out; periods **2.6–4.6s** with staggered delays up to ~3s, so stars arrive in waves rather than all at once.
+  - **Drift** — a small, slow rise (about 6–14px over 9–15s) with slight sideways variation.
+- No rotation flicker and no fast pulsing; only `opacity` and `transform` animate.
+- Animations stay paused until `group-hover` / `group-focus-visible`; `prefers-reduced-motion` disables the effect entirely.
 
 ### 3. Scope guardrails
 
@@ -40,17 +37,11 @@ Rebuild the button hover effect so it matches the uploaded "fine dust" reference
 
 ## Technical details
 
-- Star shape: existing cross-needle gradient technique (hard-stop linear gradients, 1px needles + inset core) — crisp at small sizes, recolours via `currentColor`.
-- All animation via `transform` + `opacity` only (GPU-cheap); each star sets CSS vars `--cyd-dx`, `--cyd-dy`, `--cyd-shimmer`, `--cyd-drift-dur`, `--cyd-delay` inline (the existing inline-style exception for particles).
-- ~400 spans per button is acceptable for hover-only playback, but I'll verify paint smoothness in the preview and trim toward ~250 if needed.
-- Verification: Playwright screenshots of the components page at high DPI, idle vs hovered, confirming full-surface dense dust, edge bleed, bright flares, no ring pattern, and reduced-motion off state.
+- Star shape via `clip-path` polygon with a narrow waist — crisp at every size, recolours from `currentColor`.
+- All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
+- ~150 spans per button, hover-only playback — light enough to stay smooth.
+- Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, edge bleed, mixed star sizes, readable label, and the reduced-motion off state.
 
-## Options to pick
+## Open choice
 
-Density is locked at the reference's dense-dust level. One style choice remains — see the animated sample I shared:
-
-1. **Style A — restrained**: gentle drift (2–6px travel, dust hanging in air), subtle flares (max ~10px).
-2. **Style B — richer**: flowing drift (8–14px travel along a shared diagonal, visible sprinkling like the star-flow gif), prominent long-needle flares (max ~14px).
-
-If no preference is stated, the build uses Style B (closest to the star-flow reference).
-
+The sample I just shared (v3) is the pace and density I'd build. If you want it denser or the hero stars larger, say so and I'll adjust before building.
