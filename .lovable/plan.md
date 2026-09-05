@@ -47,9 +47,10 @@ Rebuild the button hover effect so it matches the uploaded "fine dust" reference
 
 ## Options to pick
 
-Density is locked at the reference's dense-dust level per your feedback. One style choice remains:
+Density is locked at the reference's dense-dust level. One style choice remains — see the animated sample I shared:
 
 1. **Style A — restrained**: gentle drift (2–6px travel, dust hanging in air), subtle flares (max ~10px).
-2. **Style B — richer**: flowing drift (8–14px travel, visible falling/sprinkling like the reference swirl), prominent flares (max ~14px).
+2. **Style B — richer**: flowing drift (8–14px travel along a shared diagonal, visible sprinkling like the star-flow gif), prominent long-needle flares (max ~14px).
 
-If no preference is stated, the build uses Style B (closest to this new reference image).
+If no preference is stated, the build uses Style B (closest to the star-flow reference).
+
