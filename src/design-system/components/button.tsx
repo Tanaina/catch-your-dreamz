@@ -74,7 +74,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       className={cn(base, variants[variant], variant === "link" ? linkSizes[size] : sizes[size], className)}
       {...props}
     >
-      {!disabled && !loading && <Glitter color={glitterColor[variant]} />
+      {!disabled && !loading && <Glitter color={glitterColor[variant]} />}
       {loading ? <Spinner /> : leadingIcon}
       {children}
       {trailingIcon}
@@ -167,7 +167,7 @@ const PARTICLES: Array<[number, number, number, number, number, boolean, number]
   [99, 34, 1.5, 1.5, 0.82, false, -0.6],
 ];
 
-function Glitter({ color, rounded }: { color: string }) {
+function Glitter({ color }: { color: string }) {
   return (
     <span
       aria-hidden="true"
