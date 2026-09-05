@@ -19,7 +19,7 @@ The **current live preview is the immutable button baseline**. The earlier sampl
 
 ### 1. Particle field (button.tsx)
 
-- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~50%, mid stars ~35%, hero stars ~15%.
+- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~66%, mid stars ~28%, hero stars ~6%.
 - Deterministic `PARTICLES` table rewritten with a denser distribution, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
 - The glitter layer remains visually pill-shaped: the core field is contained to the pill, with a separate restrained edge scatter extending only slightly outside the ring.
 
