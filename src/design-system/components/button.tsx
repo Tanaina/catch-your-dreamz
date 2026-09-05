@@ -174,7 +174,7 @@ function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
       className={cn(
         "pointer-events-none absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-150",
         "group-hover:opacity-100 group-focus-visible:opacity-100",
-        rounded ? "rounded-xs" : "rounded-pill",
+        "rounded-pill",
       )}
       style={{ ["--cyd-glitter-color" as string]: color }}
     >
