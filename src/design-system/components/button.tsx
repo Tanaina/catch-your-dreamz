@@ -165,6 +165,7 @@ const PARTICLES: Array<[number, number, number, number, number, boolean, number]
   [94, 23, 1.5, 1.1, 0.66, false, -0.4],
   [97, 58, 1, 1.3, 0.39, false, 0.5],
   [99, 34, 1.5, 1.5, 0.82, false, -0.6],
+];
 
 function Glitter({ color, rounded }: { color: string; rounded?: boolean }) {
   return (
