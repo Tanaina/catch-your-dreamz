@@ -4,12 +4,14 @@
 
 Rebuild the button hover effect so it matches the uploaded "fine dust" reference: a **dense field of very fine bronze-gold dust** — hundreds of tiny specks packed across the whole pill, brightest where they cluster — with occasional brighter 4-point star flares scattered through it. Every particle is a star/glint (no plain dots), continuously shimmering and drifting while the button is hovered or focused. Organic and irregular — never a dotted border, ring, or grid.
 
-## Reference read (uploaded image)
+## Reference read (uploaded images, incl. the bronze star-flow gif)
 
 - The dust is **fine and dense**: the mass of the effect is specks ~1–2px, not stars.
 - **Density gradient**: specks cluster thickly and thin out toward the edges — on the button this becomes densest through the middle band of the pill, softer toward the top/bottom edges and just past the pill bounds.
-- **Star flares**: a minority of particles are larger 4-point stars (~5–12px) that flash more brightly than the dust.
+- **Star flares**: a visible minority are crisp 4-point stars with long tapered needles, in mixed sizes (~5–14px), flashing brighter than the dust — like the star-flow gif, where distinct stars ride through the dust stream rather than sitting in a uniform sprinkle.
+- **Flow**: the field reads as a moving stream — particles travel along a shared gentle diagonal while twinkling, not just pulsing in place.
 - Colour: warm gold/bronze throughout (`--cta-glitter` family); brightness varies by opacity, not hue.
+
 
 ## What changes
 
