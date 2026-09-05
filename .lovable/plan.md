@@ -11,10 +11,10 @@ Apart from those two things, the **current live preview is the immutable button 
 
 ## Reference read (moving_dust gif)
 
-- **Pace is slow**: each star fades in, holds, and fades out over roughly 3–5 seconds; drift travel is small and slow (a few pixels over 9–15 seconds). Nothing flickers.
-- **Denser, but refined**: increase the sample's particle count enough to create a continuous fine-dust field while retaining varied spacing and clearly separated star glints.
+- **Pace is slow**: each star fades in, holds, and fades out over roughly 3.4–5.6 seconds; drift travel is small and slow (a few pixels over 13–20 seconds). Nothing flickers.
+- **Denser field**: a continuous fine-dust field of roughly 310 in-pill stars plus ~60 in the edge scatter, still with varied spacing and clearly separated glints.
 - **Placement**: the field follows the pill silhouette across its full width and height, with most particles contained within that shape and only a soft, narrow spill immediately beyond the ring. The label stays readable.
-- **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed and deliberately restrained — dust ~1.4–2.6px, mid stars ~4–7.5px, hero stars ~8.5–12px (no oversized stars).
+- **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed and one step larger than the earlier sample — dust ~2.2–3.6px, mid stars ~5–8.5px, hero stars ~9.5–13px.
 - **Colour**: soft warm gold (`--cta-glitter` family); brightness varies by opacity only.
 - **Button styling stays exactly as it is**: the reference applies only to the glitter motion and particle appearance, not to the button face, ring, text, hover colour, or typography.
 
@@ -22,15 +22,15 @@ Apart from those two things, the **current live preview is the immutable button 
 
 ### 1. Particle field (button.tsx)
 
-- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~66%, mid stars ~28%, hero stars ~6%.
-- Deterministic `PARTICLES` table rewritten with a denser distribution, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
+- Every particle renders as a thin 4-point star (no plain round dots), in three size tiers: dust ~66% (2.2–3.6px), mid stars ~28% (5–8.5px), hero stars ~6% (9.5–13px).
+- Deterministic `PARTICLES` table rewritten to ~310 in-pill stars plus ~60 edge-scatter stars, unevenly placed across the full pill silhouette and weighted subtly toward its lower half and curved ends.
 - The glitter layer remains visually pill-shaped: the core field is contained to the pill, with a separate restrained edge scatter extending only slightly outside the ring.
 
 ### 2. Calm animation (theme.css)
 
 - Each star runs two slow infinite animations while hovered/focused:
-  - **Twinkle** — fade and scale in, hold at full brightness, fade out; periods **2.6–4.6s** with staggered delays up to ~3s, so stars arrive in waves rather than all at once.
-  - **Drift** — a small, slow rise (about 6–14px over 9–15s) with slight sideways variation.
+  - **Twinkle** — fade and scale in, hold at full brightness, fade out; periods **3.4–5.6s** with staggered delays, so stars arrive in waves rather than all at once.
+  - **Drift** — a small, slow rise (about 5–12px over 13–20s) with slight sideways variation.
 - No rotation flicker and no fast pulsing; only `opacity` and `transform` animate.
 - Animations stay paused until `group-hover` / `group-focus-visible`; `prefers-reduced-motion` disables the effect entirely.
 
@@ -52,11 +52,11 @@ Apart from those two things, the **current live preview is the immutable button 
 
 - Star shape via `clip-path` polygon with a narrow waist — crisp at every size, recoloured from `currentColor`.
 - All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
-- Use the smallest particle count that faithfully matches the approved sample, then verify hover playback stays smooth.
+- Match `button-final-preview-v7.gif` (the approved slower, denser, one-step-larger version); keep ~370 stars per button and verify hover playback stays smooth.
 - Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, mixed star sizes, readable label, the new lettering, and the reduced-motion off state.
 - Compare idle and hover captures against the current preview to confirm nothing beyond the glitter and typeface changed on any variant.
 
 ## Open choice
 
-Pinyon Script is my recommendation for the reference lettering. Say the word if you'd rather see Italianno or Petit Formal Script before I build it.
+Pinyon Script is my recommendation for the reference lettering; Italianno is the lighter, more slanted alternative shown alongside it.
 
