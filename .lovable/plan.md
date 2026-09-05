@@ -11,7 +11,7 @@ Rebuild the button hover effect so every particle is an animated star (no dots, 
 - Remove the pinpoint-round-speck particle type entirely; the `cyd-glitter-particle::before` round-dot rendering goes away.
 - All particles render as 4-point star glints (crossed hairline needles + tiny core), in a **mix of sizes**:
   - tiny (~3–4px), small (~5–6px), medium (~7–8px), and occasional larger flares (~10–12px) per button.
-- The deterministic `PARTICLES` table is rewritten: **~104 stars (4x the original density)** scattered across the full button surface (varied `left`/`top` percentages, deliberately uneven so no ring or grid pattern emerges). Because every star runs its own out-of-phase twinkle cycle, roughly half are mid-flash at any instant — a dense, living field rather than a static starfield.
+- The deterministic `PARTICLES` table is rewritten: **~208 stars (8x the original density)** scattered across the full button surface (varied `left`/`top` percentages, deliberately uneven so no ring or grid pattern emerges). Because every star runs its own out-of-phase twinkle cycle, roughly half are mid-flash at any instant — a dense, living field rather than a static starfield.
 
 ### 2. Every star animates continuously (theme.css)
 
@@ -37,7 +37,7 @@ Rebuild the button hover effect so every particle is an animated star (no dots, 
 
 ## Options to pick
 
-Density is locked at **4x (~104 stars)** per your demo feedback. A visual demo of both remaining styles was shown in chat (two animation frames each).
+Density is locked at **8x (~208 stars)** per your demo feedback. A visual demo of both remaining styles was shown in chat (two animation frames each).
 
 1. **Style A — restrained**: gentle drift (2–6px travel, dust hanging in air), subtle flares (max ~10px).
 2. **Style B — richer**: flowing drift (8–14px travel, visible falling/sprinkling), prominent flares (max ~14px occasional hero glint).
