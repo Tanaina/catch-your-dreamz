@@ -114,7 +114,6 @@ function Components() {
               <Button>Add to Cart</Button>
               <Button variant="outline">Save for Later</Button>
               <Button variant="ghost">Keep Browsing</Button>
-              <Button variant="link">Size Guide</Button>
               <Button variant="link" className="px-6 py-2 hover:text-cta-glitter">
                 Size Guide
               </Button>
