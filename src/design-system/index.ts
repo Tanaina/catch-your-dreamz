@@ -1,3 +1,10 @@
+/**
+ * Catch Your Dreamz Design System
+ *
+ * Tokens live in ./styles/theme.css — import it once in your global stylesheet:
+ *   @import "./design-system/styles/theme.css";
+ */
+
 export { cn } from "./lib/cn";
 
 export { Button } from "./components/button";
