@@ -11,7 +11,7 @@
   --cyd-gold-50: #fdf9ee;
   --cyd-gold-100: #f8efd4;
   --cyd-gold-200: #efdca6;
-  --cyd-gold-300: #e3c571;
+  --cyd-gold-300: #d6c17a;
   --cyd-gold-400: #e3c571;
   --cyd-gold-500: #e3c571;
   --cyd-gold-600: #e3c571;
@@ -72,12 +72,12 @@
   --cyd-ctagold-500: #c2a15a;
   --cyd-ctagold-600: #a9884a;
   --cyd-ctagold-700: #8d6f38;
-  /* Primary CTA: filled with the primary brand gold. */
-  --cta: var(--cyd-gold-300);
-  --cta-hover: var(--cyd-gold-300);
-  --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-gold-300);
-  --cta-glitter: var(--cyd-gold-300);
+  /* Primary CTA — soft cream body with Catch Your Dreamz logo gold */
+  --cta: #ece9e2;
+  --cta-hover: #ece9e2;
+  --cta-foreground: #d6c17a;
+  --cta-border: #d6c17a;
+  --cta-glitter: #d6c17a;
 
   /* Radius */
   --radius-xs: 0.25rem;
@@ -106,11 +106,11 @@
   --border: #3a3a3a;
   --border-strong: var(--cyd-gold-300);
   --ring: var(--cyd-gold-300);
-  --cta: var(--cyd-gold-300);
-  --cta-hover: var(--cyd-gold-300);
-  --cta-foreground: var(--cyd-ink-900);
-  --cta-border: var(--cyd-gold-300);
-  --cta-glitter: var(--cyd-ctagold-300);
+  --cta: #0b0b0b;
+  --cta-hover: #0b0b0b;
+  --cta-foreground: #d6c17a;
+  --cta-border: #d6c17a;
+  --cta-glitter: #d6c17a;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
@@ -193,7 +193,7 @@
 }
 
 @utility cyd-rule-gold {
-  background-image: linear-gradient(to right, transparent, var(--cyd-gold-400), transparent);
+  background-image: linear-gradient(to right, transparent, var(--cyd-gold-300), transparent);
 }
 
 /* Fairy glitter — very fine gold specks plus a few crisp star glints that
