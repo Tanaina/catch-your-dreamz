@@ -105,12 +105,16 @@ function Components() {
         </aside>
 
         <div>
-          <Block id="button" title="Button" blurb="Primary actions. Rich antique-gold pill by default with a falling gold-glitter hover; outline and ghost for secondary weight, link for inline actions.">
+          <Block
+            id="button"
+            title="Button"
+            blurb="Primary actions. Rich antique-gold pill by default with a falling gold-glitter hover; outline and ghost for secondary weight, link for inline actions."
+          >
             <Spec label="variant: primary | outline | ghost | link">
-              <Button>Add to cart</Button>
-              <Button variant="outline">Save for later</Button>
-              <Button variant="ghost">Keep browsing</Button>
-              <Button variant="link">Size guide</Button>
+              <Button>Add to Cart</Button>
+              <Button variant="outline">Save for Later</Button>
+              <Button variant="ghost">Keep Browsing</Button>
+              <Button variant="link">Size Guide</Button>
             </Spec>
             <Spec label="size: sm | md | lg">
               <Button size="sm">Small</Button>
@@ -178,9 +182,7 @@ function Components() {
                       <CardTitle>Amethyst Dream</CardTitle>
                       <CardDescription>Raw crystal on a gold-filled chain.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      Hand-wrapped in the studio, one of eight made this month.
-                    </CardContent>
+                    <CardContent>Hand-wrapped in the studio, one of eight made this month.</CardContent>
                     <CardFooter>
                       <Button size="sm">$96</Button>
                       <Badge tone="neutral">8 left</Badge>
@@ -190,7 +192,9 @@ function Components() {
                 </div>
               ))}
             </div>
-            <Snippet code={`<Card>\n  <CardHeader><CardTitle>Amethyst Dream</CardTitle></CardHeader>\n  <CardContent>Hand-wrapped in the studio.</CardContent>\n</Card>`} />
+            <Snippet
+              code={`<Card>\n  <CardHeader><CardTitle>Amethyst Dream</CardTitle></CardHeader>\n  <CardContent>Hand-wrapped in the studio.</CardContent>\n</Card>`}
+            />
           </Block>
 
           <Block id="badge" title="Badge" blurb="Small status and metadata labels.">
@@ -219,7 +223,11 @@ function Components() {
             <Snippet code={`<Badge tone="success">Shipped</Badge>`} />
           </Block>
 
-          <Block id="divider" title="Divider" blurb="Plain hairline, gold ornament, or a labelled rule for section breaks.">
+          <Block
+            id="divider"
+            title="Divider"
+            blurb="Plain hairline, gold ornament, or a labelled rule for section breaks."
+          >
             <div className="flex max-w-xl flex-col gap-6">
               <div>
                 <Divider />
@@ -237,7 +245,11 @@ function Components() {
             <Snippet code={`<Divider ornament label="Catch the sun" />`} />
           </Block>
 
-          <Block id="heading" title="Heading" blurb="Display serif, brand script, or tracked eyebrow — with the semantic level set separately.">
+          <Block
+            id="heading"
+            title="Heading"
+            blurb="Display serif, brand script, or tracked eyebrow — with the semantic level set separately."
+          >
             <div className="flex flex-col gap-4">
               <Heading level={2} variant="script">
                 Chase your dreams
@@ -272,7 +284,6 @@ function Components() {
             </Spec>
             <Snippet code={`<Logo size="lg" />`} />
           </Block>
-
 
           <section className="rounded-lg border border-border bg-surface p-8">
             <Heading level={3}>In context</Heading>
