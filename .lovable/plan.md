@@ -52,11 +52,11 @@ Apart from those two things, the **current live preview is the immutable button 
 
 - Star shape via `clip-path` polygon with a narrow waist — crisp at every size, recoloured from `currentColor`.
 - All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
-- Use the smallest particle count that faithfully matches the approved sample, then verify hover playback stays smooth.
+- Match `button-final-preview-v7.gif` (the approved slower, denser, one-step-larger version); keep ~370 stars per button and verify hover playback stays smooth.
 - Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, mixed star sizes, readable label, the new lettering, and the reduced-motion off state.
 - Compare idle and hover captures against the current preview to confirm nothing beyond the glitter and typeface changed on any variant.
 
 ## Open choice
 
-Pinyon Script is my recommendation for the reference lettering. Say the word if you'd rather see Italianno or Petit Formal Script before I build it.
+Pinyon Script is my recommendation for the reference lettering; Italianno is the lighter, more slanted alternative shown alongside it.
 
