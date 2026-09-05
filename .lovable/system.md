@@ -47,7 +47,7 @@ scatter data, not design values.
 
 ## The logo
 
-`src/assets/logos/cyd-logo-circle.jpg` is the canonical mark: the full circular
+`src/design-system/assets/logos/cyd-logo-circle.jpg` is the canonical mark: the full circular
 emblem. Always render `<Logo />`; never redraw,
 recolour, or place it on a white plate.
 
