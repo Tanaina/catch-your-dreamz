@@ -11,10 +11,10 @@ Apart from those two things, the **current live preview is the immutable button 
 
 ## Reference read (moving_dust gif)
 
-- **Pace is slow**: each star fades in, holds, and fades out over roughly 3–5 seconds; drift travel is small and slow (a few pixels over 9–15 seconds). Nothing flickers.
-- **Denser, but refined**: increase the sample's particle count enough to create a continuous fine-dust field while retaining varied spacing and clearly separated star glints.
+- **Pace is slow**: each star fades in, holds, and fades out over roughly 3.4–5.6 seconds; drift travel is small and slow (a few pixels over 13–20 seconds). Nothing flickers.
+- **Denser field**: a continuous fine-dust field of roughly 310 in-pill stars plus ~60 in the edge scatter, still with varied spacing and clearly separated glints.
 - **Placement**: the field follows the pill silhouette across its full width and height, with most particles contained within that shape and only a soft, narrow spill immediately beyond the ring. The label stays readable.
-- **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed and deliberately restrained — dust ~1.4–2.6px, mid stars ~4–7.5px, hero stars ~8.5–12px (no oversized stars).
+- **Star shape**: thin, long-pointed 4-point stars with a fine waist; sizes mixed and one step larger than the earlier sample — dust ~2.2–3.6px, mid stars ~5–8.5px, hero stars ~9.5–13px.
 - **Colour**: soft warm gold (`--cta-glitter` family); brightness varies by opacity only.
 - **Button styling stays exactly as it is**: the reference applies only to the glitter motion and particle appearance, not to the button face, ring, text, hover colour, or typography.
 
