@@ -48,11 +48,15 @@ Apart from those two things, the **current live preview is the immutable button 
 - Do not alter any other component or page.
 - Files touched: `button.tsx` (particle table + Glitter renderer), the glitter and font sections of `theme.css`, and the font `<link>` in `src/routes/__root.tsx`.
 
+## Technical details
+
+- Star shape via `clip-path` polygon with a narrow waist — crisp at every size, recoloured from `currentColor`.
 - All animation via `transform` + `opacity` only; each star sets `--cyd-size`, `--cyd-shimmer`, `--cyd-delay`, `--cyd-drift-dur`, `--cyd-dx`, `--cyd-dy`, `--cyd-max-opacity` inline (the existing inline-style exception for particles).
-- Use the smallest particle count that faithfully matches the denser approved sample, then verify hover playback remains smooth.
-- Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, edge bleed, mixed star sizes, readable label, and the reduced-motion off state.
-- Compare idle and hover captures against the current preview to confirm that no non-glitter styling changed on any variant.
+- Use the smallest particle count that faithfully matches the approved sample, then verify hover playback stays smooth.
+- Verification: Playwright frame captures at high DPI, idle vs hovered, confirming slow twinkle, mixed star sizes, readable label, the new lettering, and the reduced-motion off state.
+- Compare idle and hover captures against the current preview to confirm nothing beyond the glitter and typeface changed on any variant.
 
 ## Open choice
 
-The replacement visual sample must use a direct capture of the current preview button as its unchanged base and add only the denser, pill-shaped glitter overlay. The earlier sample's button styling is discarded entirely.
+Pinyon Script is my recommendation for the reference lettering. Say the word if you'd rather see Italianno or Petit Formal Script before I build it.
+
