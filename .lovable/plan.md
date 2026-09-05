@@ -1,10 +1,13 @@
-# Elegant Star-Dust Hover — Button Glitter Rebuild
+# Elegant Star-Dust Hover — Button Glitter + Script Font
 
 ## Goal
 
-Match the moving reference: on hover, delicate warm-gold **4-point stars in mixed sizes** appear slowly across and just beyond the pill, twinkling in and out at a calm pace while drifting gently upward, with fine dust specks between them. Unhurried and refined — never a fast, busy shimmer, never a dotted border or grid.
+Two changes to the button, nothing else:
 
-The **current live preview is the immutable button baseline**. The earlier sample's button styling is rejected; only the glitter's appearance and movement are relevant.
+1. **Glitter** — on hover, delicate warm-gold 4-point stars in mixed sizes appear slowly across the pill, twinkling in and out at a calm pace while drifting gently upward, with fine dust between them. Unhurried and refined; approved sample: `glitter-motion-sample-v5.gif`.
+2. **Button lettering** — swap the script face on every button to the formal copperplate calligraphy in the `CYD_Butttons.png` reference.
+
+Apart from those two things, the **current live preview is the immutable button baseline**.
 
 ## Reference read (moving_dust gif)
 
