@@ -24,12 +24,10 @@ const base =
   "disabled:opacity-45 disabled:pointer-events-none";
 
 const variants: Record<ButtonVariant, string> = {
-  primary:
-    "group bg-cta text-cta-foreground border border-cta-border shadow-sm hover:bg-cta-hover active:bg-cta rounded-pill",
-  outline:
-    "group border border-border-strong text-foreground hover:bg-primary-soft active:bg-cyd-gold-200 rounded-pill",
-  ghost: "group text-foreground hover:bg-surface-muted active:bg-border rounded-pill",
-  link: "group text-foreground underline decoration-primary underline-offset-4 hover:text-primary-hover rounded-xs",
+  primary: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
+  outline: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
+  ghost: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
+  link: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
 };
 
 /** Glitter tint per variant: the gold that already belongs to that button. */
