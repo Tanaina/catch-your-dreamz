@@ -74,10 +74,10 @@
   --cyd-ctagold-700: #8d6f38;
   /* Primary CTA — soft cream body with Catch Your Dreamz logo gold */
   --cta: #fdfaf3;
-  --cta-hover: #c4a06a;
+  --cta-hover: #f8efd4;
   --cta-foreground: #d6c17a;
-  --cta-border: #d6c17a;
-  --cta-glitter: #b08a57;
+  --cta-border: #c4a06a;
+  --cta-glitter: #c09a68;
 
   /* Radius */
   --radius-xs: 0.25rem;
