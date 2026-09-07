@@ -172,7 +172,7 @@
   --color-cyd-ctagold-700: var(--cyd-ctagold-700);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-script: "Great Vibes", "Cormorant Garamond", cursive;
+  --font-script: "Pinyon Script", "Cormorant Garamond", cursive;
   --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
 
   --radius-xs: var(--radius-xs);
