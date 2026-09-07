@@ -1,8 +1,9 @@
+import "./styles/theme.css";
+
 /**
  * Catch Your Dreamz Design System
  *
- * Tokens live in ./styles/theme.css — import it once in your global stylesheet:
- *   @import "./design-system/styles/theme.css";
+ * Tokens and utilities are loaded automatically with this barrel.
  */
 
 export { cn } from "./lib/cn";

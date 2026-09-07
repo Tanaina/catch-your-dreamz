@@ -91,6 +91,8 @@
   --shadow-md: 0 6px 18px -6px rgba(118, 93, 26, 0.18);
   --shadow-lg: 0 22px 48px -18px rgba(118, 93, 26, 0.28);
   --shadow-glow: 0 0 0 1px var(--cyd-gold-200), 0 12px 30px -14px rgba(212, 175, 55, 0.55);
+
+  font-family: var(--font-sans);
 }
 
 .dark {

@@ -1,1 +1,6 @@
 src/showcase/**
+src/routes/**
+src/router.tsx
+src/routeTree.gen.ts
+wrangler.jsonc
+mockup-preview.d.ts
