@@ -39,9 +39,9 @@ const glitterColor: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "h-8 px-4 text-sm",
-  md: "h-10 px-5 text-base",
-  lg: "h-12 px-6 text-lg",
+  sm: "h-8 px-4 text-lg",
+  md: "h-10 px-5 text-xl",
+  lg: "h-12 px-6 text-2xl",
 };
 
 const linkSizes: Record<ButtonSize, string> = {
