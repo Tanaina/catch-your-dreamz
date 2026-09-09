@@ -18,7 +18,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "relative isolate overflow-hidden inline-flex items-center justify-center gap-2 font-script text-xl " +
+  "relative isolate overflow-hidden inline-flex items-center justify-center gap-2 font-script text-2xl " +
   "transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring " +
   "focus-visible:ring-offset-2 focus-visible:ring-offset-background " +
   "disabled:opacity-45 disabled:pointer-events-none";
