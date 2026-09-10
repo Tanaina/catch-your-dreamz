@@ -112,7 +112,10 @@ function Components() {
           >
             <Spec label="variant: primary | outline | ghost | link">
               <Button>Add to Cart</Button>
-              <Button variant="outline">Save for Later</Button>
+              <Button variant="outline" showGlitter={false}>
+                {" "}
+                Save for Later
+              </Button>
               <Button variant="ghost">Keep Browsing</Button>
               <Button variant="link" className="hover:bg-cta-hover">
                 Browse Sizes
