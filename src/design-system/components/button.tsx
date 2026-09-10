@@ -89,6 +89,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
  */
 const PARTICLES: Array<[number, number, number, number, number, boolean, number]> = [
   // Star glints
+  [7, 18, 9, 1.3, 0.25, true, 0],
+  [15, 42, 13, 1.5, 0.7, true, 0],
+  [22, 72, 8, 1.1, 0.4, true, 0],
+  [31, 28, 14, 1.4, 0.85, true, 0],
+  [41, 76, 10, 1.2, 0.15, true, 0],
+  [50, 32, 12, 1.6, 0.55, true, 0],
+  [65, 18, 13, 1.5, 0.35, true, 0],
+  [72, 45, 8, 1.1, 0.65, true, 0],
+  [89, 72, 14, 1.6, 0.5, true, 0],
+  [97, 44, 9, 1.2, 0.8, true, 0],
   [12, 30, 12, 1.2, 0.0, true, 0],
   [34, 66, 11, 1.4, 0.45, true, 0],
   [58, 26, 15, 1.1, 0.2, true, 0],
