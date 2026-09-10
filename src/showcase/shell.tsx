@@ -53,7 +53,7 @@ export function Shell({ children }: { children: ReactNode }) {
       </header>
       <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
       <footer className="border-t border-border px-6 py-8 text-center">
-        <Text tone="muted" size="xs" className="cyd-tracked">
+        <Text tone="muted" size="md" className="cyd-tracked">
           Chase your dreams and catch the sun
         </Text>
       </footer>
