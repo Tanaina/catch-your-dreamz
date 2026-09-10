@@ -4,7 +4,7 @@ import { cn, Logo, Text } from "@/design-system";
 
 const NAV = [
   { to: "/", label: "Overview" },
-  { to: "/colors", label: "Colors" },
+  { to: "/colors", label: "Colours" },
   { to: "/typography", label: "Typography" },
   { to: "/components", label: "Components" },
 ] as const;
@@ -25,8 +25,8 @@ export function Shell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
           <Link to="/" className="flex items-center gap-3">
-            <Logo size="sm" alt="" />
-            <span className="font-script text-2xl leading-none">Catch Your Dreamz</span>
+            <Logo size="lg" alt="" />
+            <span className="font-script text-3xl leading-none">Catch Your Dreamz</span>
           </Link>
           <nav className="ml-auto flex items-center gap-1">
             {NAV.map((item) => (
@@ -92,9 +92,7 @@ export function Caption({ children }: { children: ReactNode }) {
 export function Snippet({ code }: { code: string }) {
   return (
     <details className="mt-4 rounded-sm border border-border bg-surface-muted px-4 py-2">
-      <summary className="cursor-pointer font-sans text-[0.6rem] cyd-tracked text-foreground-muted">
-        Code
-      </summary>
+      <summary className="cursor-pointer font-sans text-[0.6rem] cyd-tracked text-foreground-muted">Code</summary>
       <pre className="overflow-x-auto pt-3 pb-2 font-mono text-xs text-foreground">{code}</pre>
     </details>
   );
