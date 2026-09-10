@@ -90,10 +90,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
 const PARTICLES: Array<[number, number, number, number, number, boolean, number]> = [
   // Star glints
   [7, 18, 15, 1.3, 0.25, true, 0],
-  [15, 42, 13, 1.5, 0.7, true, 0],
+  [15, 42, 17, 1.5, 0.7, true, 0],
   [22, 72, 8, 1.1, 0.4, true, 0],
   [31, 28, 18, 1.4, 0.85, true, 0],
-  [41, 76, 10, 1.2, 0.15, true, 0],
+  [41, 76, 20, 1.2, 0.15, true, 0],
   [50, 32, 12, 1.6, 0.55, true, 0],
   [65, 18, 13, 1.5, 0.35, true, 0],
   [72, 45, 19, 1.1, 0.65, true, 0],
@@ -101,7 +101,7 @@ const PARTICLES: Array<[number, number, number, number, number, boolean, number]
   [97, 44, 9, 1.2, 0.8, true, 0],
   [12, 30, 12, 1.2, 0.0, true, 0],
   [34, 66, 14, 1.4, 0.45, true, 0],
-  [58, 26, 15, 1.1, 0.2, true, 0],
+  [58, 26, 10, 1.1, 0.2, true, 0],
   [79, 62, 20, 1.3, 0.6, true, 0],
   [92, 32, 18, 1.5, 0.35, true, 0],
   // Pinpoint specks
