@@ -113,7 +113,6 @@ function Components() {
             <Spec label="variant: primary | outline | ghost | link">
               <Button>Add to Cart</Button>
               <Button variant="outline" showGlitter={false}>
-                {" "}
                 Save for Later
               </Button>
               <Button variant="ghost">Keep Browsing</Button>
