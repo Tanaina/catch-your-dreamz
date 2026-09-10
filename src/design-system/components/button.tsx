@@ -33,9 +33,9 @@ const variants: Record<ButtonVariant, string> = {
 /** Glitter tint per variant: the gold that already belongs to that button. */
 const glitterColor: Record<ButtonVariant, string> = {
   primary: "var(--cta-glitter)",
-  outline: "var(--primary)",
-  ghost: "var(--primary)",
-  link: "var(--primary)",
+  outline: "var(--cta-glitter)",
+  ghost: "var(--cta-glitter)",
+  link: "var(--cta-glitter)",
 };
 
 const sizes: Record<ButtonSize, string> = {
