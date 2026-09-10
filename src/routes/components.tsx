@@ -116,7 +116,7 @@ function Components() {
                 Save for Later
               </Button>
               <Button variant="ghost">Keep Browsing</Button>
-              <Button variant="link" className="text-cta-glitter "hover:bg-surface-muted">
+              <Button variant="link" className="text-cta-glitter hover:bg-surface-muted">
                 View Stock
               </Button>
             </Spec>
