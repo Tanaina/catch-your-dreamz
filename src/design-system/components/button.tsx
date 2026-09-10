@@ -15,6 +15,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   leadingIcon?: ReactNode;
   /** Element rendered after the label. */
   trailingIcon?: ReactNode;
+  /** Whether glitter appears on hover. */
+  showGlitter?: boolean;
 }
 
 const base =
@@ -51,6 +53,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     loading = false,
     leadingIcon,
     trailingIcon,
+    showGlitter = true,
     className,
     children,
     disabled,
@@ -68,7 +71,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       className={cn(base, variants[variant], sizes[size], className)}
       {...props}
     >
-      {!disabled && !loading && <Glitter color={glitterColor[variant]} />}
+      {showGlitter && !disabled && !loading && <Glitter color={glitterColor[variant]} />}
       {loading ? <Spinner /> : leadingIcon}
       {children}
       {trailingIcon}
