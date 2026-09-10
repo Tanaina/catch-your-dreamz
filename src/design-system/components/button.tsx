@@ -1,4 +1,4 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { forwardRef, useState, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cn } from "../lib/cn";
 
 export type ButtonVariant = "primary" | "outline" | "ghost" | "link";
@@ -205,7 +205,25 @@ const PARTICLES: Array<[number, number, number, number, number, boolean, number]
   [98, 56, 1.5, 1.2, 0.79, false, 0.5],
 ];
 
+function createRandomParticles() {
+  return Array.from({ length: 100 }, (_, i) => ({
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    dot: i < 15 ? Math.random() * 9 + 8 : Math.random() * 0.8 + 0.8,
+    period: Math.random() * 0.6 + 1,
+    delay: Math.random() * 0.9,
+    star: i < 15,
+    drift: Math.random() * 1.2 - 0.6,
+  }));
+}
+
 function Glitter({ color }: { color: string }) {
+  const [particles, setParticles] = useState(() => createRandomParticles());
+
+  const refreshParticles = () => {
+    setParticles(createRandomParticles());
+  };
+
   return (
     <span
       aria-hidden="true"
@@ -215,10 +233,11 @@ function Glitter({ color }: { color: string }) {
         "rounded-pill",
       )}
       style={{ ["--cyd-glitter-color" as string]: color }}
+      onMouseEnter={refreshParticles}
     >
-      {PARTICLES.map(([left, top, dot, period, delay, star, drift], i) => (
+      {particles.map(({ left, top, dot, period, delay, star, drift }, i) => (
         <span
-          key={i}
+          key={`${i}-${left}-${top}`}
           className={cn("cyd-glitter-particle", star && "cyd-glitter-star")}
           style={{
             left: `${left}%`,
