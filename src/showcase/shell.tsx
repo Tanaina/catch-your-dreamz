@@ -25,7 +25,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
           <Link to="/" className="flex items-center gap-3">
-            <Logo size="md" alt="" />
+            <Logo size="sm" alt="" />
             <span className="font-script text-3xl leading-none">Catch Your Dreamz</span>
           </Link>
           <nav className="ml-auto flex items-center gap-1">
