@@ -1,5 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Divider, Heading, Logo, Text } from "@/design-system";
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Divider,
+  Heading,
+  Logo,
+  Text,
+} from "@/design-system";
 import { Shell } from "@/showcase/shell";
 
 export const Route = createFileRoute("/")({
@@ -30,13 +42,12 @@ function Overview() {
           Catch Your Dreamz
         </Heading>
         <Text tone="muted" className="mt-4 max-w-xl">
-          A mystical-elegant design language: antique gold on ink, fine script headlines and
-          delicate line work — drawn straight from the brand mark.
+          A mystical-elegant design language: antique gold on ink, fine script headlines and delicate line work.
         </Text>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Badge solid>Version 0.1</Badge>
-          <Badge tone="neutral">Starter tokens</Badge>
-          <Badge>9 components</Badge>
+          <Badge tone="neutral">Brand Tokens</Badge>
+          <Badge>5+ Components</Badge>
         </div>
       </div>
 
@@ -60,7 +71,11 @@ function Overview() {
             to: "/components",
           },
         ].map((item) => (
-          <Link key={item.to} to={item.to} className="outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
+          <Link
+            key={item.to}
+            to={item.to}
+            className="outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+          >
             <Card className="h-full transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
