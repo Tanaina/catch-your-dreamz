@@ -25,9 +25,9 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
-  outline: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
+  outline: "group text-foreground bg-transparent border border-transparent hover:bg-surface-muted rounded-pill",
   ghost: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
-  link: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
+  link: "group text-foreground bg-transparent border border-transparent hover:bg-surface-muted rounded-pill",
 };
 
 /** Glitter tint per variant: the gold that already belongs to that button. */
