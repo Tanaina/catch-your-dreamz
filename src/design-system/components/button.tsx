@@ -44,12 +44,6 @@ const sizes: Record<ButtonSize, string> = {
   lg: "h-12 px-6 text-2xl",
 };
 
-const linkSizes: Record<ButtonSize, string> = {
-  sm: "p-0 text-[0.65rem]",
-  md: "p-0",
-  lg: "p-0 text-sm",
-};
-
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     variant = "primary",
@@ -71,7 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       type={type}
       disabled={disabled || loading}
       aria-busy={loading || undefined}
-      className={cn(base, variants[variant], variant === "link" ? linkSizes[size] : sizes[size], className)}
+      className={cn(base, variants[variant], sizes[size], className)}
       {...props}
     >
       {!disabled && !loading && <Glitter color={glitterColor[variant]} />}
