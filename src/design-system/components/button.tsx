@@ -15,8 +15,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   leadingIcon?: ReactNode;
   /** Element rendered after the label. */
   trailingIcon?: ReactNode;
-  /** Whether glitter appears on hover. */
-  showGlitter?: boolean;
+
+  /** Enables randomized glitter on hover. */
+  enableGlitter?: boolean;
+  /** Enables the directional sweep effect on hover. */
+  enableSweep?: boolean;
 }
 
 const base =
@@ -51,9 +54,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     variant = "primary",
     size = "md",
     loading = false,
+    enableGlitter = false,
+    enableSweep = false,
     leadingIcon,
     trailingIcon,
-    showGlitter = true,
     className,
     children,
     disabled,
@@ -71,7 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       className={cn(base, variants[variant], sizes[size], className)}
       {...props}
     >
-      {showGlitter && !disabled && !loading && <Glitter color={glitterColor[variant]} />}
+      {enableGlitter && !disabled && !loading && <Glitter color={glitterColor[variant]} />}
       {loading ? <Spinner /> : leadingIcon}
       {children}
       {trailingIcon}
