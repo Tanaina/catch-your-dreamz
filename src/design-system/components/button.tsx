@@ -25,8 +25,8 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
-  outline: "group text-foreground bg-transparent border border-cta-border hover:text-cta-glitter rounded-pill",
-  ghost: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
+  outline: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
+  ghost: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
   link: "group text-foreground bg-transparent border border-transparent hover:bg-cta-hover rounded-pill",
 };
 
