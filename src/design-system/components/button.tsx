@@ -66,6 +66,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   },
   ref,
 ) {
+  const [particles, setParticles] = useState<RandomParticle[] | null>(null);
+
+  const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (enableGlitter && !disabled && !loading) {
+      setParticles(createRandomParticles());
+    }
+
+    props.onMouseEnter?.(event);
+  };
+
+  const handleMouseLeave = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setParticles(null);
+    props.onMouseLeave?.(event);
+  };
   return (
     <button
       ref={ref}
@@ -75,7 +89,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       className={cn(base, variants[variant], sizes[size], className)}
       {...props}
     >
-      {enableGlitter && !disabled && !loading && <Glitter color={glitterColor[variant]} />}
+      {enableGlitter && !disabled && !loading && particles && (
+        <Glitter color={glitterColor[variant]} particles={particles} />
+      )}
       {loading ? <Spinner /> : leadingIcon}
       {children}
       {trailingIcon}
@@ -205,7 +221,17 @@ const PARTICLES: Array<[number, number, number, number, number, boolean, number]
   [98, 56, 1.5, 1.2, 0.79, false, 0.5],
 ];
 
-function createRandomParticles() {
+type RandomParticle = {
+  left: number;
+  top: number;
+  dot: number;
+  period: number;
+  delay: number;
+  star: boolean;
+  drift: number;
+};
+
+function createRandomParticles(): RandomParticle[] {
   return Array.from({ length: 100 }, (_, i) => ({
     left: Math.random() * 100,
     top: Math.random() * 100,
@@ -217,13 +243,7 @@ function createRandomParticles() {
   }));
 }
 
-function Glitter({ color }: { color: string }) {
-  const [particles, setParticles] = useState(() => createRandomParticles());
-
-  const refreshParticles = () => {
-    setParticles(createRandomParticles());
-  };
-
+function Glitter({ color, particles }: { color: string; particles: RandomParticle[] }) {
   return (
     <span
       aria-hidden="true"
@@ -233,7 +253,6 @@ function Glitter({ color }: { color: string }) {
         "rounded-pill",
       )}
       style={{ ["--cyd-glitter-color" as string]: color }}
-      onMouseEnter={refreshParticles}
     >
       {particles.map(({ left, top, dot, period, delay, star, drift }, i) => (
         <span
