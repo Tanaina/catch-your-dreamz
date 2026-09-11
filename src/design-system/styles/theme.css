@@ -212,6 +212,7 @@
     opacity: 0;
     transform: translate3d(0, 0, 0) scale(0.4);
   }
+
   50% {
     opacity: 1;
     transform: translate3d(var(--cyd-drift, 0.5px), -0.5px, 0) scale(1);
@@ -229,6 +230,7 @@
     opacity: 1;
     transform: rotate(45deg) scale(1);
   }
+}
 
 /* Base particle: an extremely tiny metallic speck. */
 .cyd-glitter-particle {
@@ -254,7 +256,6 @@
   inset: 0;
   border-radius: 999px;
   background: currentColor;
-  box-shadow: 0 0 2px currentColor;
 }
 
 /* Crisp star glint: hairline crossed needles + a pinpoint core. */
@@ -262,18 +263,8 @@
   animation-name: cyd-sparkle-glint;
 }
 
-.cyd-glitter-star {
-  animation-name: none;
-}
-
 .cyd-glitter-star::before {
-  content: "";
-  position: absolute;
-  inset: 0;
   border-radius: 0;
-  transform-origin: center;
-  animation: cyd-sparkle-glint 1.2s ease-in-out infinite both;
-  animation-delay: var(--cyd-delay, 0s);
   background:
     linear-gradient(to right, transparent 0%, currentColor 44%, currentColor 56%, transparent 100%) center / 100% 1px
       no-repeat,
@@ -284,10 +275,18 @@
 .cyd-glitter-star::after {
   content: "";
   position: absolute;
-  inset: 36%;
+  inset: 38%;
   border-radius: 999px;
   background: currentColor;
-  box-shadow: 0 0 3px currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyd-glitter-particle,
+  .cyd-glitter-particle::before,
+  .cyd-glitter-particle::after {
+    animation: none !important;
+    opacity: 0 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
