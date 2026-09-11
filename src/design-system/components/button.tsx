@@ -60,13 +60,13 @@ type RandomParticle = {
 };
 
 function createRandomParticles(): RandomParticle[] {
-  return Array.from({ length: 100 }, (_, i) => ({
+  return Array.from({ length: 160 }, (_, i) => ({
     left: Math.random() * 100,
     top: Math.random() * 100,
-    dot: i < 11 ? Math.random() * 9 + 9 : Math.random() * 1.4 + 1.2,
+    dot: i < 14 ? Math.random() * 9 + 9 : Math.random() * 1.4 + 1.2,
     period: Math.random() * 0.6 + 1,
     delay: Math.random() * 0.9,
-    star: i < 11,
+    star: i < 14,
     drift: Math.random() * 1.2 - 0.6,
   }));
 }
