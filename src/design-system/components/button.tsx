@@ -63,10 +63,10 @@ function createRandomParticles(): RandomParticle[] {
   return Array.from({ length: 100 }, (_, i) => ({
     left: Math.random() * 100,
     top: Math.random() * 100,
-    dot: i < 18 ? Math.random() * 9 + 9 : Math.random() * 1.4 + 1.2,
+    dot: i < 11 ? Math.random() * 9 + 9 : Math.random() * 1.4 + 1.2,
     period: Math.random() * 0.6 + 1,
     delay: Math.random() * 0.9,
-    star: i < 18,
+    star: i < 11,
     drift: Math.random() * 1.2 - 0.6,
   }));
 }
