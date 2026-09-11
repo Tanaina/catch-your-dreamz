@@ -111,13 +111,18 @@ function Components() {
             blurb="Primary actions. Rich antique-gold pill by default with a falling gold-glitter hover; outline and ghost for secondary weight, link for inline actions."
           >
             <Spec label="variant: primary | outline | ghost | link">
-              <Button>Add to Cart</Button>
-              <Button variant="outline" Save for Later</Button>
-              <Button variant="ghost">Keep Browsing</Button>
-              <Button variant="link"
-               enableGlitter
-               enableSweep
-               className="hover:text-cyd-gold-300">Browse Sizes</Button>
+              <Button variant="primary" enableGlitter>
+                Add to Cart
+              </Button>
+              <Button variant="outline" enableSweep>
+                Watch Item
+              </Button>
+              <Button variant="ghost" enableGlitter>
+                Keep Browsing
+              </Button>
+              <Button variant="link" enableSweep>
+                Browse Sizes
+              </Button>
             </Spec>
             <Spec label="size: sm | md | lg">
               <Button size="sm">Small</Button>

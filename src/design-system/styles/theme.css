@@ -281,3 +281,60 @@
     opacity: 0 !important;
   }
 }
+
+/* Button side-sweep */
+.cyd-button-sweep {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  opacity: 0;
+}
+
+.cyd-button-sweep::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: -55%;
+  width: 42%;
+  transform: skewX(-18deg) translateX(-140%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--cta-glitter) 8%, transparent) 25%,
+    color-mix(in srgb, var(--cta-glitter) 45%, transparent) 50%,
+    color-mix(in srgb, var(--cta-glitter) 8%, transparent) 75%,
+    transparent 100%
+  );
+  filter: blur(0.3px);
+}
+
+.group:hover .cyd-button-sweep,
+.group:focus-visible .cyd-button-sweep {
+  opacity: 1;
+}
+
+.group:hover .cyd-button-sweep::before,
+.group:focus-visible .cyd-button-sweep::before {
+  animation: cyd-button-side-sweep 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes cyd-button-side-sweep {
+  0% {
+    transform: skewX(-18deg) translateX(-140%);
+  }
+
+  100% {
+    transform: skewX(-18deg) translateX(420%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyd-button-sweep,
+  .cyd-button-sweep::before {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
