@@ -2,7 +2,7 @@
  * Catch Your Dreamz — design system theme.
  * Single import that gives a project the full token set.
  * Consumers: @import "./design-system/styles/theme.css";
- * Consumers must also load Cormorant Garamond, Great Vibes and Jost with a
+ * Consumers must also load Cormorant Garamond, Pinyon Script, Great Vibes and Jost with a
  * <link> tag in the document head — never @import a font URL in CSS.
  */
 
@@ -169,6 +169,11 @@
   --color-cta-foreground: var(--cta-foreground);
   --color-cta-border: var(--cta-border);
   --color-cta-glitter: var(--cta-glitter);
+  --color-cyd-ctagold-200: var(--cyd-ctagold-200);
+  --color-cyd-ctagold-300: var(--cyd-ctagold-300);
+  --color-cyd-ctagold-400: var(--cyd-ctagold-400);
+  --color-cyd-ctagold-500: var(--cyd-ctagold-500);
+  --color-cyd-ctagold-600: var(--cyd-ctagold-600);
   --color-cyd-ctagold-700: var(--cyd-ctagold-700);
 
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -249,6 +254,7 @@
   inset: 0;
   border-radius: 999px;
   background: currentColor;
+  box-shadow: 0 0 2px currentColor;
 }
 
 /* Crisp star glint: hairline crossed needles + a pinpoint core. */
@@ -258,19 +264,21 @@
 
 .cyd-glitter-star::before {
   border-radius: 0;
+  filter: drop-shadow(0 0 1.5px currentColor);
   background:
-    linear-gradient(to right, transparent 0%, currentColor 44%, currentColor 56%, transparent 100%) center / 100% 1px
+    linear-gradient(to right, transparent 0%, currentColor 42%, currentColor 58%, transparent 100%) center / 100% 1.5px
       no-repeat,
-    linear-gradient(to bottom, transparent 0%, currentColor 44%, currentColor 56%, transparent 100%) center / 1px 100%
+    linear-gradient(to bottom, transparent 0%, currentColor 42%, currentColor 58%, transparent 100%) center / 1.5px 100%
       no-repeat;
 }
 
 .cyd-glitter-star::after {
   content: "";
   position: absolute;
-  inset: 38%;
+  inset: 36%;
   border-radius: 999px;
   background: currentColor;
+  box-shadow: 0 0 3px currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -303,9 +311,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    color-mix(in srgb, var(--cta-glitter) 8%, transparent) 25%,
-    color-mix(in srgb, var(--cta-glitter) 45%, transparent) 50%,
-    color-mix(in srgb, var(--cta-glitter) 8%, transparent) 75%,
+    color-mix(in srgb, var(--cta-glitter) 22%, transparent) 25%,
+    color-mix(in srgb, var(--cta-glitter) 72%, transparent) 50%,
+    color-mix(in srgb, var(--cta-glitter) 22%, transparent) 75%,
     transparent 100%
   );
   filter: blur(0.3px);
@@ -318,7 +326,7 @@
 
 .group:hover .cyd-button-sweep::before,
 .group:focus-visible .cyd-button-sweep::before {
-  animation: cyd-button-side-sweep 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: cyd-button-side-sweep 1.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 @keyframes cyd-button-side-sweep {
