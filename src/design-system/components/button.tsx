@@ -30,10 +30,10 @@ const base =
   "disabled:opacity-45 disabled:pointer-events-none";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
-  outline: "group text-foreground bg-transparent border border-transparent hover:bg-surface-muted rounded-pill",
-  ghost: "group text-foreground bg-transparent border border-cta-border hover:bg-cta-hover rounded-pill",
-  link: "group text-foreground bg-transparent border border-transparent hover:bg-surface-muted hover:text-cyd-gold-300 rounded-pill",
+  primary: "group text-foreground bg-transparent border border-cta-border rounded-pill",
+  outline: "group text-foreground bg-transparent border border-transparent rounded-pill",
+  ghost: "group text-foreground bg-transparent border border-cta-border rounded-pill",
+  link: "group text-foreground bg-transparent border border-transparent hover:text-cyd-gold-300 rounded-pill",
 };
 
 const glitterColor: Record<ButtonVariant, string> = {
@@ -63,10 +63,10 @@ function createRandomParticles(): RandomParticle[] {
   return Array.from({ length: 100 }, (_, i) => ({
     left: Math.random() * 100,
     top: Math.random() * 100,
-    dot: i < 15 ? Math.random() * 9 + 8 : Math.random() * 0.8 + 0.8,
+    dot: i < 18 ? Math.random() * 9 + 9 : Math.random() * 1.4 + 1.2,
     period: Math.random() * 0.6 + 1,
     delay: Math.random() * 0.9,
-    star: i < 15,
+    star: i < 18,
     drift: Math.random() * 1.2 - 0.6,
   }));
 }
