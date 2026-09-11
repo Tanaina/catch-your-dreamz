@@ -160,7 +160,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       onBlur={handleBlur}
       {...props}
     >
-      {enableSweep && !disabled && !loading && <span aria-hidden="true" className="cyd-button-sweep" />}
+      {enableSweep && !enableGlitter && !disabled && !loading && (
+        <span aria-hidden="true" className="cyd-button-sweep" />
+      )}
 
       {enableGlitter && !disabled && !loading && particles && (
         <Glitter color={glitterColor[variant]} particles={particles} />
