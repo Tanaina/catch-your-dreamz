@@ -30,9 +30,10 @@ const base =
   "disabled:opacity-45 disabled:pointer-events-none";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "group text-foreground bg-transparent border border-cta-border rounded-pill",
-  outline: "group text-foreground bg-transparent border border-transparent rounded-pill",
-  ghost: "group text-foreground bg-transparent border border-cta-border rounded-pill",
+  primary: "group text-foreground bg-transparent border border-cta-border rounded-pill hover:text-cyd-gold-300",
+  outline:
+    "group text-foreground bg-transparent border border-transparent rounded-pill hover:border-cta-border hover:text-cyd-gold-300",
+  ghost: "group text-foreground bg-transparent border border-cta-border rounded-pill hover:text-cyd-gold-300",
   link: "group text-foreground bg-transparent border border-transparent hover:text-cyd-gold-300 rounded-pill",
 };
 
