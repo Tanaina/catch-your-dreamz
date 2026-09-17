@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TypographyRouteImport } from './routes/typography'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
+import { Route as ButtonPaletteRouteImport } from './routes/button-palette'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
@@ -29,6 +30,11 @@ const ComponentsRoute = ComponentsRouteImport.update({
 const ColorsRoute = ColorsRouteImport.update({
   id: '/colors',
   path: '/colors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ButtonPaletteRoute = ButtonPaletteRouteImport.update({
+  id: '/button-palette',
+  path: '/button-palette',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -51,6 +57,7 @@ const Char91__componentChar93PreviewSplatRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/button-palette': typeof ButtonPaletteRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/typography': typeof TypographyRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/button-palette': typeof ButtonPaletteRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/typography': typeof TypographyRoute
@@ -68,6 +76,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/button-palette': typeof ButtonPaletteRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/typography': typeof TypographyRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/button-palette'
     | '/colors'
     | '/components'
     | '/typography'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/button-palette'
     | '/colors'
     | '/components'
     | '/typography'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/button-palette'
     | '/colors'
     | '/components'
     | '/typography'
@@ -103,6 +115,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ButtonPaletteRoute: typeof ButtonPaletteRoute
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
   TypographyRoute: typeof TypographyRoute
@@ -133,6 +146,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/button-palette': {
+      id: '/button-palette'
+      path: '/button-palette'
+      fullPath: '/button-palette'
+      preLoaderRoute: typeof ButtonPaletteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -159,6 +179,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ButtonPaletteRoute: ButtonPaletteRoute,
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
   TypographyRoute: TypographyRoute,
