@@ -78,14 +78,14 @@ function ButtonPalette() {
   return (
     <Shell>
       <section className="mb-12">
-        <Heading level={1}>Button palette</Heading>
+        <Heading level={1}>Visual Effects</Heading>
         <Text tone="muted" className="mt-4 max-w-2xl">
           Compare each button treatment in its resting, hover, keyboard-focus and unavailable states before
           choosing the website style.
         </Text>
       </section>
 
-      <Section title="State matrix" description="Every variant shown with the visible states side by side.">
+      <Section title="Button Behaviour" description="A table showing each button variant and their states.">
         <div className="overflow-x-auto rounded-lg border border-border bg-surface">
           <table className="w-full min-w-[760px] border-collapse">
             <thead>
