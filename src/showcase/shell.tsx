@@ -7,6 +7,7 @@ const NAV = [
   { to: "/colors", label: "Colours" },
   { to: "/typography", label: "Typography" },
   { to: "/components", label: "Components" },
+  { to: "/button-palette", label: "Button Palette" },
 ] as const;
 
 function useTheme() {

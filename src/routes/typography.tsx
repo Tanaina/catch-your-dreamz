@@ -13,6 +13,8 @@ export const Route = createFileRoute("/typography")({
       },
       { property: "og:title", content: "Typography — Catch Your Dreamz Design System" },
       { property: "og:description", content: "Display, script and body type scale." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Typography,

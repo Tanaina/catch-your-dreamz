@@ -12,6 +12,8 @@ export const Route = createFileRoute("/colors")({
       },
       { property: "og:title", content: "Colors — Catch Your Dreamz Design System" },
       { property: "og:description", content: "Gold, ink and semantic surface tokens." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Colors,

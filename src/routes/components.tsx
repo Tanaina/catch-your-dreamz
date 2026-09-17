@@ -31,6 +31,8 @@ export const Route = createFileRoute("/components")({
       },
       { property: "og:title", content: "Components — Catch Your Dreamz Design System" },
       { property: "og:description", content: "Every variant and state, rendered live." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Components,
