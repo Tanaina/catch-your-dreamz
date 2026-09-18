@@ -189,12 +189,16 @@ function Components() {
                 <div key={variant} className="flex flex-col gap-2">
                   <Card variant={variant}>
                     <CardHeader>
-                      <CardTitle>Amethyst Dream</CardTitle>
-                      <CardDescription>Raw crystal on a gold-filled chain.</CardDescription>
+                      <CardTitle>{variant === "elevated" ? "Amethyst" : variant === "outline" ? "Opalite" : "Tiger's Eye"}</CardTitle>
+                      <CardDescription>
+                        {variant === "elevated" ? <>Function: Hanging<br />Size: Small</> : variant === "outline" ? <>Function: Hanging<br />Size: Medium</> : <>Function: Stand<br />Size: Small</>}
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>Hand-wrapped in the studio, one of eight made this month.</CardContent>
+                    <CardContent>
+                      {variant === "elevated" ? <>Copper wire and 24k gold connectors.<br />Glass minor stones.</> : variant === "outline" ? <>Silver wire and connectors.<br />Moonstone minor stones.</> : <>24k Gold wire and connectors.<br />Elegant Gold Amulets.<br />One of Eight made this collection.</>}
+                    </CardContent>
                     <CardFooter>
-                      <Button size="sm">$96</Button>
+                      <Button size="sm">{variant === "elevated" ? "$40.00" : variant === "outline" ? "$50.00" : "$65.00"}</Button>
                       <Badge tone="neutral">8 left</Badge>
                     </CardFooter>
                   </Card>
