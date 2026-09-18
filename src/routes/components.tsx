@@ -314,7 +314,7 @@ function Components() {
                     intensity={intensity}
                     className="rounded-lg border border-border p-6 shadow-sm"
                   >
-                    <Heading level={5}>{intensity}</Heading>
+                    <Heading level={4}>{intensity}</Heading>
                     <Text size="sm" tone="muted" className="mt-1">
                       Stone, mineral, gold.
                     </Text>
