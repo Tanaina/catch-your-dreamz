@@ -15,6 +15,7 @@ import {
   Input,
   Label,
   Logo,
+  MarbleSurface,
   Text,
   Textarea,
 } from "@/design-system";
@@ -71,6 +72,7 @@ const ENTRIES = [
   "Heading",
   "Text",
   "Logo",
+  "MarbleSurface",
 ] as const;
 
 function Components() {
@@ -299,7 +301,34 @@ function Components() {
             <Snippet code={`<Logo size="lg" />`} />
           </Block>
 
-          <section className="rounded-lg border border-border bg-surface p-8">
+          <Block
+            id="marblesurface"
+            title="MarbleSurface"
+            blurb="The CYD marble material: warm ivory stone, hazy mineral cloud, thin organic veins and embedded champagne-gold flecks. Available as the cyd-marble class or this component."
+          >
+            <Spec label="intensity">
+              <div className="grid w-full gap-4 sm:grid-cols-3">
+                {(["subtle", "default", "rich"] as const).map((intensity) => (
+                  <MarbleSurface
+                    key={intensity}
+                    intensity={intensity}
+                    className="rounded-lg border border-border p-6 shadow-sm"
+                  >
+                    <Heading level={4}>{intensity}</Heading>
+                    <Text size="sm" tone="muted" className="mt-1">
+                      Stone, mineral, gold.
+                    </Text>
+                  </MarbleSurface>
+                ))}
+              </div>
+            </Spec>
+            <Snippet
+              code={`<MarbleSurface intensity="rich" className="rounded-lg p-6">…</MarbleSurface>
+<div className="cyd-marble rounded-lg p-6">…</div>`}
+            />
+          </Block>
+
+          <section className="cyd-marble cyd-marble-subtle rounded-lg border border-border p-8">
             <Heading level={3}>In context</Heading>
             <Text tone="muted" size="sm" className="mt-1">
               A checkout card assembled only from the system.
