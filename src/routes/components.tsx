@@ -322,8 +322,10 @@ function Components() {
                 ))}
               </div>
             </Spec>
-            <Snippet>{`<MarbleSurface intensity="rich" className="rounded-lg p-6">…</MarbleSurface>
-<div className="cyd-marble rounded-lg p-6">…</div>`}</Snippet>
+            <Snippet
+              code={`<MarbleSurface intensity="rich" className="rounded-lg p-6">…</MarbleSurface>
+<div className="cyd-marble rounded-lg p-6">…</div>`}
+            />
           </Block>
 
           <section className="cyd-marble cyd-marble-subtle rounded-lg border border-border p-8">
