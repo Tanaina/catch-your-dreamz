@@ -135,7 +135,7 @@ function ButtonPalette() {
 
       <Section
         title="Live effects"
-        description="Hover or keyboard-focus each option to compare the fairy-glitter and shimmer-sweep treatments."
+        description="Options for Buttons that use Live Effects when viewed on web and mobile."
       >
         <div className="grid gap-5 md:grid-cols-2">
           {PALETTE_VARIANTS.map((variant) => (
