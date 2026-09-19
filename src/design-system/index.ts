@@ -45,6 +45,3 @@ export type {
 
 export { Logo } from "./components/logo";
 export type { LogoProps, LogoSize } from "./components/logo";
-
-export { MarbleSurface } from "./components/marble";
-export type { MarbleSurfaceProps, MarbleIntensity } from "./components/marble";
