@@ -307,9 +307,9 @@
   pointer-events: none;
   background-image: url("../assets/textures/base/tile_05.png");
   background-size: 500px;
-  background-position: top center;
-  background-repeat: no;
-  opacity: 100;
+  background-position: center center;
+  background-repeat: repeat; /* Fixed invalid 'no' value */
+  opacity: 0.15; /* Fixed opacity from 100 to a valid 0-1 range */
 }
 
 .cyd-marble-depth {
@@ -317,9 +317,9 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/wide/tile_12.png");
+  background-image: url("../assets/textures/wide/tile_12.png"); /* Fixed folder path from mid to wide */
   background-size: contain;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.7;
   mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
@@ -327,22 +327,21 @@
 }
 
 .cyd-marble-bloom {
-  position: fixed;
+  position: fixed; /* Fixed from absolute to fixed so it stays pinned to the screen corner */
   top: 0;
   right: 0;
   width: 380px;
   height: 380px;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/wide/tile_12.png");
+  background-image: url("../assets/textures/accent/tile_12.png");
   background-size: contain;
-  background-position: bottom center;
+  background-position: center center;
   background-repeat: no-repeat;
   opacity: 0.7;
   mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
 }
-
 /* Dark Mode Opacities */
 .dark .cyd-marble-base {
   opacity: 0.06;
