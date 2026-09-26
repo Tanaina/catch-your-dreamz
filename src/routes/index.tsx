@@ -38,26 +38,26 @@ export const Route = createFileRoute("/")({
 function Overview() {
   return (
     <Shell>
-      <div aria-hidden className="cyd-marble-base" />
-      <div aria-hidden className="cyd-marble-depth" />
-      <div aria-hidden className="cyd-marble-bloom" />
-      <div className="relative z-10">
-      <div className="flex flex-col items-center text-center">
-        <Logo size="lg" />
-        <Heading level={1} variant="script" className="mt-6">
-          Catch Your Dreamz
-        </Heading>
-        <Text tone="muted" className="mt-4 max-w-xl">
-          A mystical-elegant design language: antique gold on ink, fine script headlines and delicate line work.
-        </Text>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Badge solid>Version 1.0</Badge>
-          <Badge tone="neutral">Brand Tokens</Badge>
-          <Badge>Components</Badge>
+      <section className="relative isolate overflow-hidden rounded-lg px-6 py-14">
+        <div aria-hidden className="cyd-marble-banner" />
+        <div className="relative z-10 flex flex-col items-center text-center">
+          <Logo size="lg" />
+          <Heading level={1} variant="script" className="mt-6">
+            Catch Your Dreamz
+          </Heading>
+          <Text tone="muted" className="mt-4 max-w-xl">
+            A mystical-elegant design language: antique gold on ink, fine script headlines and delicate line work.
+          </Text>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Badge solid>Version 1.0</Badge>
+            <Badge tone="neutral">Brand Tokens</Badge>
+            <Badge>Components</Badge>
+          </div>
         </div>
-      </div>
+      </section>
 
       <Divider ornament className="my-14" />
+
 
       <div className="grid gap-6 md:grid-cols-3">
         {[
