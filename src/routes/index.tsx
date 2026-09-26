@@ -95,7 +95,10 @@ function Overview() {
                 </CardContent>
               </Card>
             </Link>
-            {/* Theme Toggle Sun & Moon Buttons */}
+          ))}
+        </div>
+
+        {/* Theme Toggle Sun & Moon Buttons placed cleanly below the grid */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
           <Button
             variant="glow"
@@ -113,8 +116,7 @@ function Overview() {
             Moon
           </Button>
         </div>
-          ))}
-        </div>
+
       </div>
     </Shell>
   );
