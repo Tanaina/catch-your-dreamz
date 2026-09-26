@@ -298,9 +298,8 @@
   }
 }
 
-/* Marble texture layers — smooth, non-repeating mineral backgrounds.
-   Stack order: base (ethereal cream) -> depth (mid-tone scroll fade)
-   -> bloom (heavy gold accent). Content sits above at z-10. */
+/* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
+
 .cyd-marble-base {
   position: fixed;
   inset: 0;
