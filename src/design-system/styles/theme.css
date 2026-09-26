@@ -7,6 +7,13 @@
  */
 
 :root {
+  :root {
+    /* Updated to match direct folder paths */
+    --texture-base-09: url("../../assets/textures/tile_09.png");
+    --texture-accent-02: url("../../assets/textures/tile_02.png");
+    --texture-mid-10: url("../../assets/textures/tile_10.png");
+  }
+
   /* Brand gold */
   --cyd-gold-50: #fdf9ee;
   --cyd-gold-100: #f8efd4;
