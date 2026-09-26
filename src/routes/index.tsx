@@ -38,6 +38,10 @@ export const Route = createFileRoute("/")({
 function Overview() {
   return (
     <Shell>
+      <div aria-hidden className="cyd-marble-base" />
+      <div aria-hidden className="cyd-marble-depth" />
+      <div aria-hidden className="cyd-marble-bloom" />
+      <div className="relative z-10">
       <div className="flex flex-col items-center text-center">
         <Logo size="lg" />
         <Heading level={1} variant="script" className="mt-6">
@@ -91,6 +95,7 @@ function Overview() {
             </Card>
           </Link>
         ))}
+      </div>
       </div>
     </Shell>
   );
