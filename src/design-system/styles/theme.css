@@ -309,7 +309,7 @@
   /* Switched to tile_01.png (larger resolution) or tile_12.png */
   background-image: url("../assets/textures/wide/tile_12.png");
   background-size: auto;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   /* Dropped opacity so any stretch softness turns into smooth ambient fog */
   opacity: 0.5;
