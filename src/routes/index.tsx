@@ -39,6 +39,7 @@ function Overview() {
   return (
     <Shell>
       <section className="relative isolate overflow-hidden rounded-lg px-6 py-12">
+        <div aria-hidden className="cyd-marble-atmosphere" />
         <div aria-hidden className="cyd-marble-banner" />
         <div className="relative z-10 flex flex-col items-center text-center">
           <Logo size="lg" />
