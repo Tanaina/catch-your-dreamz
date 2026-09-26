@@ -103,7 +103,7 @@ function Overview() {
           <Button
             variant="glow"
             onClick={() => document.documentElement.classList.add("dark")}
-            leadingIcon={<span className="text-lg">☀️</span>}
+            leadingIcon={<span className="text-lg">Sun</span>}
           >
             Sun
           </Button>
@@ -111,7 +111,7 @@ function Overview() {
           <Button
             variant="heavysweep"
             onClick={() => document.documentElement.classList.remove("dark")}
-            leadingIcon={<span className="text-lg">🌙</span>}
+            leadingIcon={<span className="text-lg">Moon</span>}
           >
             Moon
           </Button>
