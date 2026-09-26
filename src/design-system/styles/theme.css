@@ -306,7 +306,7 @@
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/base/tile_15.png");
-  background-size: contain;
+  background-size: 500px;
   background-position: center center;
   background-repeat: yes;
   opacity: 0.6;
