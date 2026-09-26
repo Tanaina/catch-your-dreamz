@@ -337,7 +337,7 @@
   height: 380px;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/accent/tile_02.png");
+  background-image: url("../assets/textures/accent/tile_12.png");
   /* Keep accent at native container scale instead of full viewport cover */
   background-size: contain;
   background-position: top right;
