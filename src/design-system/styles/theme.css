@@ -7,7 +7,6 @@
  */
 
 :root {
-:root {
   /* Wide / Panoramic Banners */
   --texture-wide-12: url("../assets/textures/wide/tile_12.png");
   --texture-wide-17: url("../assets/textures/wide/tile_17.png");
@@ -231,7 +230,7 @@
 /* Fairy glitter — very fine gold specks plus a few crisp star glints that
    twinkle in place across the whole button. Only transform/opacity animate,
    and the animations stay paused until the button is hovered or focused. */
-  
+
 @keyframes cyd-sparkle-speck {
   0%,
   100% {
@@ -348,7 +347,7 @@
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  opacity: 0.30;
+  opacity: 0.3;
   -webkit-mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
   mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
 }
@@ -365,15 +364,21 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.50;
+  opacity: 0.5;
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
 /* Dark mode adjustments */
-.dark .cyd-marble-base { opacity: 0.08; }
-.dark .cyd-marble-depth { opacity: 0.12; }
-.dark .cyd-marble-bloom { opacity: 0.18; }
+.dark .cyd-marble-base {
+  opacity: 0.08;
+}
+.dark .cyd-marble-depth {
+  opacity: 0.12;
+}
+.dark .cyd-marble-bloom {
+  opacity: 0.18;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .cyd-marble-base,
@@ -438,4 +443,17 @@
     animation: none !important;
     opacity: 0 !important;
   }
+}
+
+/* Card & Banner Texture Helpers */
+.texture-subtle {
+  background-image: var(--texture-base-05);
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.texture-accent {
+  background-image: var(--texture-accent-02);
+  background-size: cover;
+  background-position: center;
 }
