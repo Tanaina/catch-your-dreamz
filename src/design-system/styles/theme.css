@@ -7,13 +7,6 @@
  */
 
 :root {
-  :root {
-    /* Updated to match direct folder paths */
-    --texture-base-09: url("../../assets/textures/tile_09.png");
-    --texture-accent-02: url("../../assets/textures/tile_02.png");
-    --texture-mid-10: url("../../assets/textures/tile_10.png");
-  }
-
   /* Brand gold */
   --cyd-gold-50: #fdf9ee;
   --cyd-gold-100: #f8efd4;
@@ -305,63 +298,63 @@
   }
 }
 
-/* Single Full-Bleed Slab Composition */
+/* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
 
-/* 1. Base Alabaster Body (Covers the full screen seamlessly) */
 .cyd-marble-base {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-base-09);
-  background-size: cover;
-  background-position: center;
+  background-image: url("../assets/textures/wide/tile_12.png");
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
-/* 2. Top & Side Heavy Gold Veins (Tile 02 layered over the edges) */
-.cyd-marble-bloom {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: var(--texture-accent-02);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.65;
-  /* Radial mask keeps center smooth for text/logo, leaving dark quartz & gold veins along perimeter */
-  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 45%, transparent 30%, black 100%);
-  mask-image: radial-gradient(ellipse 65% 55% at 50% 45%, transparent 30%, black 100%);
-}
-
-/* 3. Bottom Heavy Quartz Drift (Tile 10 bleeding up from the bottom) */
 .cyd-marble-depth {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-mid-10);
-  background-size: cover;
-  background-position: center bottom;
+  background-image: url("../assets/textures/mid/tile_12.png");
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.5;
-  -webkit-mask-image: linear-gradient(to top, black 15%, transparent 70%);
-  mask-image: linear-gradient(to top, black 15%, transparent 70%);
+  opacity: 0.7;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
 }
 
-/* Dark mode balances */
+.cyd-marble-bloom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 380px;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../assets/textures/accent/tile_12.png");
+  /* Keep accent at native container scale instead of full viewport cover */
+  background-size: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+}
+
+/* Dark Mode Opacities */
 .dark .cyd-marble-base {
+  opacity: 0.06;
+}
+
+.dark .cyd-marble-depth {
   opacity: 0.1;
 }
+
 .dark .cyd-marble-bloom {
-  opacity: 0.25;
-}
-.dark .cyd-marble-depth {
-  opacity: 0.2;
+  opacity: 0.18;
 }
 
 @media (prefers-reduced-motion: reduce) {
