@@ -319,10 +319,10 @@
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/mid/tile_12.png");
-  background-size: auto;
-  background-position: center bottom;
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.7;
   mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
 }
@@ -338,9 +338,9 @@
   background-image: url("../assets/textures/accent/tile_12.png");
   /* Keep accent at native container scale instead of full viewport cover */
   background-size: auto;
-  background-position: top right;
+  background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.7;
   mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
 }
