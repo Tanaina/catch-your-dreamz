@@ -7,30 +7,6 @@
  */
 
 :root {
-  /* Wide / Panoramic Banners */
-  --texture-wide-12: url("../assets/textures/wide/tile_12.png");
-  --texture-wide-17: url("../assets/textures/wide/tile_17.png");
-
-  /* Ethereal Clean Bases (Full-page underlays) */
-  --texture-base-05: url("../assets/textures/base/tile_05.png");
-  --texture-base-09: url("../assets/textures/base/tile_09_cleaned.png");
-  --texture-base-15: url("../assets/textures/base/tile_15.png");
-
-  /* Mid-Depth Drifts (Scroll fades) */
-  --texture-mid-01: url("../assets/textures/mid/tile_01.png");
-  --texture-mid-04: url("../assets/textures/mid/tile_04.png");
-  --texture-mid-06: url("../assets/textures/mid/tile_06.png");
-  --texture-mid-10: url("../assets/textures/mid/tile_10.png");
-  --texture-mid-18: url("../assets/textures/mid/tile_18.png");
-  --texture-mid-19: url("../assets/textures/mid/tile_19.png");
-
-  /* Heavy Accents (Focal cards & blooms) */
-  --texture-accent-02: url("../assets/textures/accent/tile_02.png");
-  --texture-accent-08: url("../assets/textures/accent/tile_08.png");
-  --texture-accent-11: url("../assets/textures/accent/tile_11.png");
-  --texture-accent-14: url("../assets/textures/accent/tile_14.png");
-  --texture-accent-16: url("../assets/textures/accent/tile_16.png");
-
   /* Brand gold */
   --cyd-gold-50: #fdf9ee;
   --cyd-gold-100: #f8efd4;
@@ -230,7 +206,6 @@
 /* Fairy glitter — very fine gold specks plus a few crisp star glints that
    twinkle in place across the whole button. Only transform/opacity animate,
    and the animations stay paused until the button is hovered or focused. */
-
 @keyframes cyd-sparkle-speck {
   0%,
   100% {
@@ -325,64 +300,61 @@
 
 /* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
 
-/* Global Marble Background System */
-/* Multi-layered organic marble composition */
-
-/* 1. Base Layer: Tile 09 or 15 fills the whole screen smoothly at low opacity */
 .cyd-marble-base {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-base-09);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  opacity: 0.18; /* Soft wash prevents pixelation */
-}
-
-/* 2. Top-Right Gold Accent: Tile 02 constrained to a fixed 400px box with radial feathering */
-.cyd-marble-bloom {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 420px;
-  height: 420px;
-  z-index: 0;
-  pointer-events: none;
-  background-image: var(--texture-accent-02);
+  background-image: url("../assets/textures/wide/tile_12.png");
   background-size: contain;
-  background-position: top right;
+  background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.45;
-  -webkit-mask-image: radial-gradient(circle at top right, black 30%, transparent 80%);
-  mask-image: radial-gradient(circle at top right, black 30%, transparent 80%);
+  opacity: 0.6;
 }
 
-/* 3. Bottom Scroll Fade: Tile 10 emerges near the bottom of the page */
 .cyd-marble-depth {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-mid-10);
-  background-size: cover;
-  background-position: center bottom;
+  background-image: url("../assets/textures/mid/tile_12.png");
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.25;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, black 85%);
-  mask-image: linear-gradient(to bottom, transparent 30%, black 85%);
+  opacity: 0.7;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
 }
 
-/* Dark mode opacities */
+.cyd-marble-bloom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 380px;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../assets/textures/accent/tile_12.png");
+  /* Keep accent at native container scale instead of full viewport cover */
+  background-size: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+}
+
+/* Dark Mode Opacities */
 .dark .cyd-marble-base {
   opacity: 0.06;
 }
-.dark .cyd-marble-bloom {
-  opacity: 0.12;
-}
+
 .dark .cyd-marble-depth {
   opacity: 0.1;
+}
+
+.dark .cyd-marble-bloom {
+  opacity: 0.18;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -448,17 +420,4 @@
     animation: none !important;
     opacity: 0 !important;
   }
-}
-
-/* Card & Banner Texture Helpers */
-.texture-subtle {
-  background-image: var(--texture-base-05);
-  background-size: cover;
-  background-blend-mode: overlay;
-}
-
-.texture-accent {
-  background-image: var(--texture-accent-02);
-  background-size: cover;
-  background-position: center;
 }
