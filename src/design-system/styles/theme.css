@@ -312,7 +312,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   /* Dropped opacity so any stretch softness turns into smooth ambient fog */
-  opacity: 0.15;
+  opacity: 0.5;
 }
 
 .cyd-marble-depth {
@@ -342,7 +342,7 @@
   background-size: contain;
   background-position: top right;
   background-repeat: no-repeat;
-  opacity: 0.6;
+  opacity: 0.5;
   mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
 }
