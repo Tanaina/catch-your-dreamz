@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Badge,
-  Button
+  Button,
   Card,
   CardContent,
   CardDescription,
@@ -116,7 +116,6 @@ function Overview() {
             Moon
           </Button>
         </div>
-
       </div>
     </Shell>
   );
