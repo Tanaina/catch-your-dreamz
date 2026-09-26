@@ -305,11 +305,11 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/base/tile_05.png");
+  background-image: url("../assets/textures/base/tile_19.png");
   background-size: 500px;
   background-position: center center;
-  background-repeat: repeat; /* Fixed invalid 'no' value */
-  opacity: 0.9; /* Fixed opacity from 100 to a valid 0-1 range */
+  background-repeat: repeat;
+  opacity: 0.9;
 }
 
 .cyd-marble-depth {
@@ -317,8 +317,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/wide/tile_12.png"); /* Fixed folder path from mid to wide */
-  background-size: contain;
+  background-image: url("../assets/textures/wide/tile_12.png");
   background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.7;
@@ -327,7 +326,7 @@
 }
 
 .cyd-marble-bloom {
-  position: fixed; /* Fixed from absolute to fixed so it stays pinned to the screen corner */
+  position: fixed;
   top: 0;
   right: 0;
   width: 380px;
