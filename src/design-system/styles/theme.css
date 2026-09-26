@@ -326,16 +326,17 @@
 
 /* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
 
+/* Global Marble Background System */
 .cyd-marble-base {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/wide/tile_12.png");
-  background-size: contain;
-  background-position: center center;
+  background-image: var(--texture-base-09); /* Ethereal alabaster */
+  background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.6;
+  opacity: 0.22;
 }
 
 .cyd-marble-depth {
@@ -343,45 +344,36 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/mid/tile_12.png");
-  background-size: contain;
-  background-position: center center;
+  background-image: var(--texture-mid-10); /* Smoky quartz drift */
+  background-size: cover;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  opacity: 0.7;
-  mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
+  opacity: 0.30;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
+  mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
 }
 
 .cyd-marble-bloom {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
-  width: 380px;
-  height: 380px;
+  height: 280px;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/accent/tile_12.png");
-  /* Keep accent at native container scale instead of full viewport cover */
-  background-size: auto;
+  background-image: var(--texture-wide-12); /* Ultra-wide hero band */
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.7;
-  mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+  opacity: 0.50;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
-/* Dark Mode Opacities */
-.dark .cyd-marble-base {
-  opacity: 0.06;
-}
-
-.dark .cyd-marble-depth {
-  opacity: 0.1;
-}
-
-.dark .cyd-marble-bloom {
-  opacity: 0.18;
-}
+/* Dark mode adjustments */
+.dark .cyd-marble-base { opacity: 0.08; }
+.dark .cyd-marble-depth { opacity: 0.12; }
+.dark .cyd-marble-bloom { opacity: 0.18; }
 
 @media (prefers-reduced-motion: reduce) {
   .cyd-marble-base,
