@@ -96,6 +96,7 @@ function Overview() {
           </Link>
         ))}
       </div>
+      </div>
     </Shell>
   );
 }
