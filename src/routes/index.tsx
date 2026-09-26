@@ -100,3 +100,34 @@ function Overview() {
     </Shell>
   );
 }
+import React from "react";
+
+type MarbleVariant = "full-page" | "hero" | "scroll-depth" | "corner-accent";
+
+interface MarbleBackgroundProps {
+  variant?: MarbleVariant;
+  tile?: "wide-12" | "wide-17" | "base-09" | "base-15" | "mid-10" | "accent-02" | "accent-08";
+  className?: string;
+}
+
+export function MarbleBackground({ variant = "full-page", className = "" }: MarbleBackgroundProps) {
+  if (variant === "full-page") {
+    return (
+      <>
+        <div aria-hidden className="cyd-marble-base" />
+        <div aria-hidden className="cyd-marble-bloom" />
+        <div aria-hidden className="cyd-marble-depth" />
+      </>
+    );
+  }
+
+  if (variant === "hero") {
+    return <div aria-hidden className={`cyd-marble-bloom ${className}`} />;
+  }
+
+  if (variant === "scroll-depth") {
+    return <div aria-hidden className={`cyd-marble-depth ${className}`} />;
+  }
+
+  return null;
+}
