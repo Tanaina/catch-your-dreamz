@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
 function Overview() {
   return (
     <Shell>
-      <section className="relative isolate overflow-hidden rounded-lg px-6 py-14">
+      <section className="relative isolate overflow-hidden rounded-lg px-6 py-12">
         <div aria-hidden className="cyd-marble-banner" />
         <div className="relative z-10 flex flex-col items-center text-center">
           <Logo size="lg" />
@@ -57,7 +57,6 @@ function Overview() {
       </section>
 
       <Divider ornament className="my-14" />
-
 
       <div className="grid gap-6 md:grid-cols-3">
         {[
@@ -99,7 +98,6 @@ function Overview() {
           </Link>
         ))}
       </div>
-
     </Shell>
   );
 }
