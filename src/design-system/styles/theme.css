@@ -326,58 +326,63 @@
 /* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
 
 /* Global Marble Background System */
+/* Multi-layered organic marble composition */
+
+/* 1. Base Layer: Tile 09 or 15 fills the whole screen smoothly at low opacity */
 .cyd-marble-base {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-base-09); /* Ethereal alabaster */
+  background-image: var(--texture-base-09);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.22;
+  opacity: 0.18; /* Soft wash prevents pixelation */
 }
 
+/* 2. Top-Right Gold Accent: Tile 02 constrained to a fixed 400px box with radial feathering */
+.cyd-marble-bloom {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 420px;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--texture-accent-02);
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+  opacity: 0.45;
+  -webkit-mask-image: radial-gradient(circle at top right, black 30%, transparent 80%);
+  mask-image: radial-gradient(circle at top right, black 30%, transparent 80%);
+}
+
+/* 3. Bottom Scroll Fade: Tile 10 emerges near the bottom of the page */
 .cyd-marble-depth {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: var(--texture-mid-10); /* Smoky quartz drift */
+  background-image: var(--texture-mid-10);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  opacity: 0.3;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
-  mask-image: linear-gradient(to bottom, transparent 20%, black 80%);
+  opacity: 0.25;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, black 85%);
+  mask-image: linear-gradient(to bottom, transparent 30%, black 85%);
 }
 
-.cyd-marble-bloom {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 280px;
-  z-index: 0;
-  pointer-events: none;
-  background-image: var(--texture-wide-12); /* Ultra-wide hero band */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-}
-
-/* Dark mode adjustments */
+/* Dark mode opacities */
 .dark .cyd-marble-base {
-  opacity: 0.08;
-}
-.dark .cyd-marble-depth {
-  opacity: 0.12;
+  opacity: 0.06;
 }
 .dark .cyd-marble-bloom {
-  opacity: 0.18;
+  opacity: 0.12;
+}
+.dark .cyd-marble-depth {
+  opacity: 0.1;
 }
 
 @media (prefers-reduced-motion: reduce) {
