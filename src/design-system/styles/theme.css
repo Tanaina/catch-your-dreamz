@@ -307,7 +307,7 @@
   pointer-events: none;
   background-image: url("../assets/textures/wide/tile_17.png");
   background-size: auto;
-  background-position: center top;
+  background-position: center centre;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
