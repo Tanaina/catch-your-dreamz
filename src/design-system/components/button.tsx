@@ -35,10 +35,9 @@ const variants: Record<ButtonVariant, string> = {
     "group text-foreground bg-transparent border border-transparent rounded-pill hover:border-cta-border hover:text-cyd-gold-300",
   ghost: "group text-foreground bg-transparent border border-cta-border rounded-pill hover:text-cyd-gold-300",
   link: "group text-foreground bg-transparent border border-transparent hover:text-cyd-gold-300 rounded-pill",
-};
-heavysweep: "bg-gradient-to-r from-[#b89753] via-[#c5a059] to-[#9c7d3d] text-white hover:opacity-95 shadow-md active:scale-95 transition-all duration-300",
+  heavysweep:
+    "bg-gradient-to-r from-[#b89753] via-[#c5a059] to-[#9c7d3d] text-white hover:opacity-95 shadow-md active:scale-95 transition-all duration-300",
   glow: "border border-[#d4af37]/40 bg-white/20 dark:bg-black/20 text-[#4a4238] dark:text-[#f7f5f0] backdrop-blur-sm hover:bg-[#d4af37]/10 hover:border-[#d4af37] active:scale-95 transition-all duration-300",
-
 };
 
 const glitterColor: Record<ButtonVariant, string> = {
