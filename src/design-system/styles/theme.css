@@ -306,11 +306,13 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/base/tile_09_cleaned.png");
+  /* Switched to tile_01.png (larger resolution) or tile_12.png */
+  background-image: url("../assets/textures/wide/tile_12.png");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.45;
+  /* Dropped opacity so any stretch softness turns into smooth ambient fog */
+  opacity: 0.15;
 }
 
 .cyd-marble-depth {
@@ -322,35 +324,40 @@
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  opacity: 0.55;
-  mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, black 85%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, black 85%);
+  opacity: 0.25;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 40%, black 90%);
 }
 
 .cyd-marble-bloom {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 380px;
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/accent/tile_02.png");
-  background-size: cover;
+  /* Keep accent at native container scale instead of full viewport cover */
+  background-size: contain;
   background-position: top right;
   background-repeat: no-repeat;
-  opacity: 0.5;
-  mask-image: radial-gradient(ellipse 60% 45% at 85% 8%, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 45% at 85% 8%, black 0%, transparent 70%);
+  opacity: 0.6;
+  mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at top right, black 20%, transparent 75%);
 }
 
+/* Dark Mode Opacities */
 .dark .cyd-marble-base {
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 .dark .cyd-marble-depth {
-  opacity: 0.12;
+  opacity: 0.1;
 }
 
 .dark .cyd-marble-bloom {
-  opacity: 0.14;
+  opacity: 0.18;
 }
 
 @media (prefers-reduced-motion: reduce) {
