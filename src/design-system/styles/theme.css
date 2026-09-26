@@ -309,7 +309,7 @@
   background-size: 500px;
   background-position: center center;
   background-repeat: repeat; /* Fixed invalid 'no' value */
-  opacity: 0.15; /* Fixed opacity from 100 to a valid 0-1 range */
+  opacity: 0.9; /* Fixed opacity from 100 to a valid 0-1 range */
 }
 
 .cyd-marble-depth {
