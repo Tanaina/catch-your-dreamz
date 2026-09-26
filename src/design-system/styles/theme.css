@@ -298,79 +298,67 @@
   }
 }
 
-/* Marble textures — contained surfaces only, always at or near native scale.
-   Never stretched across the viewport: the source crops are ~250-1000px wide
-   and blur badly when scaled up. */
-.cyd-marble-atmosphere {
-  position: absolute;
+/* Marble texture layers — smooth, non-repeating mineral backgrounds.
+   Stack order: base (ethereal cream) -> depth (mid-tone scroll fade)
+   -> bloom (heavy gold accent). Content sits above at z-10. */
+.cyd-marble-base {
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-
   background-image: url("../assets/textures/base/tile_09_cleaned.png");
-
-  background-size: 520px auto;
-  background-position: center;
-  background-repeat: repeat;
-
-  opacity: 0.12;
-  mix-blend-mode: multiply;
-
-  mask-image: radial-gradient(ellipse 85% 90% at 50% 45%, black 0%, black 45%, transparent 100%);
-
-  -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 45%, black 0%, black 45%, transparent 100%);
-}
-
-/* Wide panoramic banner (tile_12, 1007x160)*/
-.cyd-marble-banner {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-
-  background-image: url("../assets/textures/wide/tile_12.png");
-  background-size: auto 160px;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-
-  opacity: 0.55;
-
-  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 75%, transparent 100%);
-
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 75%, transparent 100%);
+  opacity: 0.45;
 }
 
-.dark .cyd-marble-banner {
-  opacity: 0.3;
-  mix-blend-mode: screen;
-}
-
-/* Card / container surface textures at native tile size, softly tiled so the
-   fine veining stays crisp. */
-.cyd-marble-surface {
-  position: absolute;
+.cyd-marble-depth {
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  border-radius: inherit;
-  background-image: url("../assets/textures/base/tile_09_cleaned.png");
-  background-size: 260px auto;
-  background-position: center;
-  opacity: 0.3;
-  mix-blend-mode: multiply;
+  background-image: url("../assets/textures/mid/tile_10.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, black 85%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, black 85%);
 }
 
-.cyd-marble-surface-veined {
-  background-image: url("../assets/textures/base/tile_15.png");
+.cyd-marble-bloom {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../assets/textures/accent/tile_02.png");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 60% 45% at 85% 8%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 45% at 85% 8%, black 0%, transparent 70%);
 }
 
-.cyd-marble-surface-warm {
-  background-image: url("../assets/textures/base/tile_05.png");
+.dark .cyd-marble-base {
+  opacity: 0.08;
 }
 
-.dark .cyd-marble-surface {
-  opacity: 0.16;
-  mix-blend-mode: screen;
+.dark .cyd-marble-depth {
+  opacity: 0.12;
+}
+
+.dark .cyd-marble-bloom {
+  opacity: 0.14;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyd-marble-base,
+  .cyd-marble-depth,
+  .cyd-marble-bloom {
+    background-attachment: scroll;
+  }
 }
 
 /* Button side-sweep */
