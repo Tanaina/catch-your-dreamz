@@ -7,6 +7,31 @@
  */
 
 :root {
+:root {
+  /* Wide / Panoramic Banners */
+  --texture-wide-12: url("../assets/textures/wide/tile_12.png");
+  --texture-wide-17: url("../assets/textures/wide/tile_17.png");
+
+  /* Ethereal Clean Bases (Full-page underlays) */
+  --texture-base-05: url("../assets/textures/base/tile_05.png");
+  --texture-base-09: url("../assets/textures/base/tile_09_cleaned.png");
+  --texture-base-15: url("../assets/textures/base/tile_15.png");
+
+  /* Mid-Depth Drifts (Scroll fades) */
+  --texture-mid-01: url("../assets/textures/mid/tile_01.png");
+  --texture-mid-04: url("../assets/textures/mid/tile_04.png");
+  --texture-mid-06: url("../assets/textures/mid/tile_06.png");
+  --texture-mid-10: url("../assets/textures/mid/tile_10.png");
+  --texture-mid-18: url("../assets/textures/mid/tile_18.png");
+  --texture-mid-19: url("../assets/textures/mid/tile_19.png");
+
+  /* Heavy Accents (Focal cards & blooms) */
+  --texture-accent-02: url("../assets/textures/accent/tile_02.png");
+  --texture-accent-08: url("../assets/textures/accent/tile_08.png");
+  --texture-accent-11: url("../assets/textures/accent/tile_11.png");
+  --texture-accent-14: url("../assets/textures/accent/tile_14.png");
+  --texture-accent-16: url("../assets/textures/accent/tile_16.png");
+
   /* Brand gold */
   --cyd-gold-50: #fdf9ee;
   --cyd-gold-100: #f8efd4;
@@ -206,6 +231,7 @@
 /* Fairy glitter — very fine gold specks plus a few crisp star glints that
    twinkle in place across the whole button. Only transform/opacity animate,
    and the animations stay paused until the button is hovered or focused. */
+  
 @keyframes cyd-sparkle-speck {
   0%,
   100% {
