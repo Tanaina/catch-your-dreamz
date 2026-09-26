@@ -308,7 +308,7 @@
   pointer-events: none;
   /* Switched to tile_01.png (larger resolution) or tile_12.png */
   background-image: url("../assets/textures/wide/tile_12.png");
-  background-size: cover;
+  background-size: auto;
   background-position: center top;
   background-repeat: no-repeat;
   /* Dropped opacity so any stretch softness turns into smooth ambient fog */
@@ -339,7 +339,7 @@
   pointer-events: none;
   background-image: url("../assets/textures/accent/tile_12.png");
   /* Keep accent at native container scale instead of full viewport cover */
-  background-size: contain;
+  background-size: auto;
   background-position: top right;
   background-repeat: no-repeat;
   opacity: 0.5;
