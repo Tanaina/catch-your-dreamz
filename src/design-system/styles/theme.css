@@ -301,9 +301,27 @@
 /* Marble textures — contained surfaces only, always at or near native scale.
    Never stretched across the viewport: the source crops are ~250-1000px wide
    and blur badly when scaled up. */
+.cyd-marble-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 
-/* Wide panoramic banner (tile_12, 1007x160). Feathered on all edges so it
-   melts into the page rather than sitting in a hard rectangle. */
+  background-image: url("../assets/textures/base/tile_09_cleaned.png");
+
+  background-size: 520px auto;
+  background-position: center;
+  background-repeat: repeat;
+
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+
+  mask-image: radial-gradient(ellipse 85% 90% at 50% 45%, black 0%, black 45%, transparent 100%);
+
+  -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 45%, black 0%, black 45%, transparent 100%);
+}
+
+/* Wide panoramic banner (tile_12, 1007x160)*/
 .cyd-marble-banner {
   position: absolute;
   inset: 0;
