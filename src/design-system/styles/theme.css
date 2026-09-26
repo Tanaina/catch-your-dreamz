@@ -342,18 +342,15 @@
 }
 
 .dark .cyd-marble-base {
-  opacity: 0.22;
-  mix-blend-mode: screen;
+  opacity: 0.08;
 }
 
 .dark .cyd-marble-depth {
-  opacity: 0.3;
-  mix-blend-mode: screen;
+  opacity: 0.12;
 }
 
 .dark .cyd-marble-bloom {
-  opacity: 0.28;
-  mix-blend-mode: screen;
+  opacity: 0.14;
 }
 
 @media (prefers-reduced-motion: reduce) {
