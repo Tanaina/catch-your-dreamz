@@ -65,16 +65,19 @@ function Overview() {
             title: "Colors",
             body: "Antique gold scale, ink neutrals and semantic surfaces for light and dark.",
             to: "/colors",
+            texture: "subtle" as const,
           },
           {
             title: "Typography",
             body: "Cormorant Garamond for display, Great Vibes for the wordmark, Jost for body.",
             to: "/typography",
+            texture: "veined" as const,
           },
           {
             title: "Components",
             body: "Buttons, fields, cards, badges, dividers and typography primitives.",
             to: "/components",
+            texture: "warm" as const,
           },
         ].map((item) => (
           <Link
@@ -82,7 +85,7 @@ function Overview() {
             to={item.to}
             className="outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
           >
-            <Card className="h-full transition-shadow hover:shadow-lg">
+            <Card texture={item.texture} className="h-full transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.body}</CardDescription>
@@ -96,7 +99,7 @@ function Overview() {
           </Link>
         ))}
       </div>
-      </div>
+
     </Shell>
   );
 }
