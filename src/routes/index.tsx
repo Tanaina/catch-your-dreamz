@@ -94,19 +94,19 @@ function Overview() {
                   </span>
                 </CardContent>
               </Card>
-           </Link>
-      ))}</div>
+            </Link>
+          ))}
+        </div>
 
-   {/* Theme Toggle Sun & Moon Buttons */}
+        {/* Theme Toggle Sun & Moon Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
           <Button
             variant="glow"
             enableGlitter
-onClick={() => {
-  document.documentElement.classList.remove("dark");
-  localStorage.setItem("cyd-theme", "light");
-}}
-
+            onClick={() => {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("cyd-theme", "light");
+            }}
           >
             Sun
           </Button>
@@ -115,10 +115,14 @@ onClick={() => {
             variant="heavysweep"
             enableSweep
             onClick={() => {
-  document.documentElement.classList.add("dark");
-  localStorage.setItem("cyd-theme", "dark");
-}}
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("cyd-theme", "dark");
+            }}
           >
             Moon
           </Button>
-        </div>))}
+        </div>
+      </div>
+    </Shell>
+  );
+}
