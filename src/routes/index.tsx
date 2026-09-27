@@ -95,7 +95,7 @@ function Overview() {
                 </CardContent>
               </Card>
            </Link>
-        </div>
+      ))}</div>
 
    {/* Theme Toggle Sun & Moon Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
@@ -121,4 +121,4 @@ onClick={() => {
           >
             Moon
           </Button>
-        </div>
+        </div>))}
