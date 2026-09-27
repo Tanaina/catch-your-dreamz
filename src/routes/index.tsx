@@ -102,7 +102,11 @@ function Overview() {
           <Button
             variant="glow"
             enableGlitter
-            onClick={() => document.documentElement.classList.remove("dark")}
+onClick={() => {
+  document.documentElement.classList.remove("dark");
+  localStorage.setItem("cyd-theme", "light");
+}}
+
           >
             Sun
           </Button>
@@ -110,7 +114,10 @@ function Overview() {
           <Button
             variant="heavysweep"
             enableSweep
-            onClick={() => document.documentElement.classList.add("dark")}
+            onClick={() => {
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("cyd-theme", "dark");
+}}
           >
             Moon
           </Button>
