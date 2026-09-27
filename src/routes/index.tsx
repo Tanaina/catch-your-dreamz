@@ -97,12 +97,11 @@ function Overview() {
            </Link>
         </div>
 
-    {/* Theme Toggle Sun & Moon Buttons */}
+   {/* Theme Toggle Sun & Moon Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
           <Button
             variant="glow"
             enableGlitter
-            className="rounded-full px-8 py-3 font-sans tracking-widest text-xs uppercase"
             onClick={() => document.documentElement.classList.remove("dark")}
           >
             Sun
@@ -111,7 +110,6 @@ function Overview() {
           <Button
             variant="heavysweep"
             enableSweep
-            className="rounded-full px-8 py-3 font-sans tracking-widest text-xs uppercase"
             onClick={() => document.documentElement.classList.add("dark")}
           >
             Moon
