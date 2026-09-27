@@ -98,17 +98,19 @@ function Overview() {
           ))}
         </div>
 
-        {/* Theme Toggle Sun & Moon Buttons */}
+{/* Theme Toggle Sun & Moon Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
-          <Button variant="glow" onClick={() => document.documentElement.classList.add("dark")}>
+          <Button
+            variant="glow"
+            onClick={() => document.documentElement.classList.add("dark")}
+          >
             Sun
           </Button>
 
-          <Button variant="heavysweep" onClick={() => document.documentElement.classList.remove("dark")}>
+          <Button
+            variant="heavysweep"
+            onClick={() => document.documentElement.classList.remove("dark")}
+          >
             Moon
           </Button>
         </div>
-      </div>
-    </Shell>
-  );
-}
