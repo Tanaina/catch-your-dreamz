@@ -95,7 +95,6 @@ function Overview() {
                 </CardContent>
               </Card>
            </Link>
-          ))}
         </div>
 
         {/* Theme Toggle Sun & Moon Buttons */}
