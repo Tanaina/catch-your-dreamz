@@ -305,7 +305,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/mid/tile_19.png");
+  background-image: url("../assets/textures/accent/marble banner accent 1.png");
   background-size: 500px;
   background-position: center center;
   background-repeat: repeat;
@@ -317,7 +317,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/accent/tile_11.png");
+  background-image: url("../assets/textures/accent/marble banner accent 3.png");
   background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.7;
@@ -333,7 +333,7 @@
   height: 380px;
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/accent/tile_14.png");
+  background-image: url("../assets/textures/accent/marble banner accent 2.png");
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
