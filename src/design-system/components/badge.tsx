@@ -10,7 +10,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const soft: Record<BadgeTone, string> = {
-  gold: "bg-primary-soft text-cyd-gold-700 border-cyd-gold-200",
+  gold: "bg-primary-soft text-cyd-gold-700 border-cyd-gold-200 dark:text-cyd-gold-300 dark:border-cyd-gold-400/40",
   neutral: "bg-surface-muted text-foreground-muted border-border",
   success: "bg-success/10 text-success border-success/30",
   warning: "bg-warning/10 text-warning border-warning/30",
@@ -19,7 +19,7 @@ const soft: Record<BadgeTone, string> = {
 
 const solidTone: Record<BadgeTone, string> = {
   gold: "bg-primary text-foreground-onbrand border-transparent",
-  neutral: "bg-cyd-ink-900 text-cyd-ink-50 border-transparent",
+  neutral: "bg-cyd-ink-900 text-cyd-ink-50 border-transparent dark:bg-cyd-ink-100 dark:text-cyd-ink-900",
   success: "bg-success text-white border-transparent",
   warning: "bg-warning text-white border-transparent",
   danger: "bg-danger text-white border-transparent",
