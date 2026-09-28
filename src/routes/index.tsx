@@ -52,7 +52,7 @@ function Overview() {
             A mystical-elegant design language: antique gold on ink, fine script headlines and delicate line work.
           </Text>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Badge solid className="bg-[#e7d4a4] text-cyd-ink-900">
+            <Badge solid className="bg-[#e3c571] text-cyd-ink-700">
               Version 1.0
             </Badge>
 
