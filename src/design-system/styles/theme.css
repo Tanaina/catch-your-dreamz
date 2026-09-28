@@ -303,14 +303,11 @@
 /*top banner*/
 .cyd-marble-base {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100vh; /* or top: 900px */
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/base/marble banner base 1.png");
-  background-size: cover;
+  aspect-ratio: 2172 / 724;
+  background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.6;
@@ -319,10 +316,9 @@
 /*middle banner*/
 .cyd-marble-depth {
   position: absolute;
-  top: 40%; /* or top: 700px */
-  left: 0;
-  right: 0;
-  height: 900px;
+  top: 40%; /* or top: 800px */
+  aspect-ratio: 1671 / 941;
+  background-size: contain;
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/mid/marban mid 1.png");
@@ -335,14 +331,11 @@
 /*bottom banner*/
 .cyd-marble-bloom {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 900px;
+  aspect-ratio: 2172 / 724;
+  background-size: contain;
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/accent/marban acc 2.png");
-  background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   opacity: 0.6;
