@@ -22,7 +22,7 @@ export function Shell({ children }: { children: ReactNode }) {
   const { dark, toggle } = useTheme();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-background text-foreground overflow-hidden">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
           <Link to="/" className="flex items-center gap-3">
