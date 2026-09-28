@@ -56,7 +56,7 @@ function Overview() {
               Version 1.0
             </Badge>
 
-            <Badge tone="neutral">Brand Tokens</Badge>
+            <Badge solid className="bg-[#d6c17a] text-cyd-ink-300">
             <Badge>Components</Badge>
           </div>
         </div>
