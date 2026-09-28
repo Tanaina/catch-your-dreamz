@@ -300,9 +300,13 @@
 
 /* Marble texture layers — smooth, non-repeating mineral backgrounds. Stack order: base (ethereal cream) -> depth (mid-tone scroll fade) -> bloom (heavy gold accent). Content sits above at z-10. */
 
+/*top banner*/
 .cyd-marble-base {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh; /* or top: 900px */
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/base/marble banner base 1.png");
@@ -310,12 +314,15 @@
   background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.6;
-  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
 
+/*middle banner*/
 .cyd-marble-depth {
   position: absolute;
-  inset: 0;
+  top: 40%; /* or top: 700px */
+  left: 0;
+  right: 0;
+  height: 900px;
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/mid/marban mid 2.png");
@@ -325,9 +332,13 @@
   mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 
+/*bottom banner*/
 .cyd-marble-bloom {
   position: absolute;
-  inset: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 900px;
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/accent/marban acc 2.png");
@@ -335,7 +346,6 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   opacity: 0.6;
-  mask-image: linear-gradient(to top, black 65%, transparent 100%);
 }
 
 /* Dark Mode Opacities */
