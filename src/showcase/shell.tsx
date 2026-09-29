@@ -22,14 +22,14 @@ export function Shell({ children }: { children: ReactNode }) {
   const { dark, toggle } = useTheme();
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground overflow-hidden">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-6 py-2">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 py-2 sm:px-6">
+          <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
             <Logo size="sm" alt="" />
-            <span className="font-script text-2xl leading-none">Catch Your Dreamz</span>
+            <span className="hidden font-script text-2xl leading-none lg:inline">Catch Your Dreamz</span>
           </Link>
-          <nav className="ml-auto flex items-center gap-1">
+          <nav className="ml-auto flex min-w-0 items-center gap-1 overflow-x-auto whitespace-nowrap">
             {NAV.map((item) => (
               <Link
                 key={item.to}
