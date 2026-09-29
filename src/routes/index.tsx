@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Badge,
-  Button,
   Card,
   CardContent,
   CardDescription,
@@ -98,32 +97,9 @@ function Overview() {
             </Link>
           ))}
         </div>
-
-        {/* Theme Toggle Sun & Moon Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-16 mb-8">
-          <Button
-            variant="glow"
-            enableGlitter
-            onClick={() => {
-              document.documentElement.classList.remove("dark");
-              localStorage.setItem("cyd-theme", "light");
-            }}
-          >
-            Sun
-          </Button>
-
-          <Button
-            variant="heavysweep"
-            enableSweep
-            onClick={() => {
-              document.documentElement.classList.add("dark");
-              localStorage.setItem("cyd-theme", "dark");
-            }}
-          >
-            Moon
-          </Button>
-        </div>
       </div>
     </Shell>
   );
 }
+
+
