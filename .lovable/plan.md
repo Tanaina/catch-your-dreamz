@@ -1,7 +1,7 @@
 # Seamless three-part marble banner
 
 ## Goal
-Replace the current top banner image with the three supplied marble tiles, begin the artwork below the sticky header, and soften all banner edges so the marble reads as one continuous page wash.
+Replace the current top banner image with the three supplied marble tiles, begin the artwork below the shorter sticky header, and soften all banner edges so the marble reads as one continuous page wash.
 
 ## Changes
 1. **Anchor artwork to the page content**
