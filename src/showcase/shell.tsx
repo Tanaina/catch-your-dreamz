@@ -24,17 +24,17 @@ export function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-hidden">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-6 py-2">
           <Link to="/" className="flex items-center gap-3">
             <Logo size="sm" alt="" />
-            <span className="font-script text-3xl leading-none">Catch Your Dreamz</span>
+            <span className="font-script text-2xl leading-none">Catch Your Dreamz</span>
           </Link>
           <nav className="ml-auto flex items-center gap-1">
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="rounded-pill px-3 py-2 font-sans text-[0.65rem] cyd-tracked text-foreground-muted transition-colors hover:bg-surface-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring outline-none"
+                className="rounded-pill px-2 py-1.5 font-sans text-[0.65rem] cyd-tracked text-foreground-muted transition-colors hover:bg-surface-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring outline-none"
                 activeProps={{ className: "bg-primary-soft text-foreground" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
@@ -45,14 +45,14 @@ export function Shell({ children }: { children: ReactNode }) {
               type="button"
               onClick={toggle}
               aria-pressed={dark}
-              className="ml-2 rounded-pill border border-border-strong px-4 py-2 font-sans text-[0.6rem] cyd-tracked transition-colors hover:bg-primary-soft focus-visible:ring-2 focus-visible:ring-ring outline-none"
+              className="ml-2 rounded-pill border border-border-strong px-3 py-1.5 font-sans text-[0.6rem] cyd-tracked transition-colors hover:bg-primary-soft focus-visible:ring-2 focus-visible:ring-ring outline-none"
             >
               {dark ? "Sun" : "Moon"}
             </button>
           </nav>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
+      <main className="relative mx-auto max-w-6xl px-6 py-12">{children}</main>
       <footer className="border-t border-border px-6 py-8 text-center">
         <Text tone="muted" size="md" className="cyd-tracked">
           Chase your dreams and catch the sun

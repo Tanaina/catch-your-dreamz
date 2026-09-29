@@ -37,7 +37,11 @@ export const Route = createFileRoute("/")({
 function Overview() {
   return (
     <Shell>
-      <div aria-hidden className="cyd-marble-base" />
+      <div aria-hidden className="cyd-marble-base">
+        <span className="cyd-marble-tile cyd-marble-tile-left" />
+        <span className="cyd-marble-tile cyd-marble-tile-center" />
+        <span className="cyd-marble-tile cyd-marble-tile-right" />
+      </div>
       <div aria-hidden className="cyd-marble-depth" />
       <div aria-hidden className="cyd-marble-bloom" />
 

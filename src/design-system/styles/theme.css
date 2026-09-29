@@ -305,16 +305,42 @@
 .cyd-marble-base {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 2172 / 724;
+  left: 50%;
+  width: 100vw;
+  height: clamp(20rem, 38vw, 32rem);
+  transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
-  background-image: url("../assets/textures/base/marble banner base 1.png");
-  background-size: contain;
-  background-position: top center;
-  background-repeat: no-repeat;
+  display: flex;
+  overflow: hidden;
   opacity: 1;
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+.cyd-marble-tile {
+  position: relative;
+  flex: 0 0 36%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cyd-marble-tile-left {
+  margin-right: -4%;
+  background-image: url("../assets/textures/base/tile_05.png");
+  mask-image: linear-gradient(to right, black 0%, black 84%, transparent 100%);
+}
+
+.cyd-marble-tile-center {
+  margin-right: -4%;
+  background-image: url("../assets/textures/base/tile_09_cleaned.png");
+  mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+}
+
+.cyd-marble-tile-right {
+  background-image: url("../assets/textures/base/tile_15.png");
+  mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
 }
 
 /*middle banner*/
@@ -322,9 +348,10 @@
 .cyd-marble-depth {
   position: absolute;
   top: 40%;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
   aspect-ratio: 1671 / 941;
+  transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/mid/marban mid 1.png");
@@ -332,7 +359,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 1;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 24%, black 76%, transparent 100%);
 }
 
 /*bottom banner*/
@@ -340,9 +367,10 @@
 .cyd-marble-bloom {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
   aspect-ratio: 2172 / 724;
+  transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
   background-image: url("../assets/textures/accent/marban acc 2.png");
@@ -350,6 +378,7 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   opacity: 1;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
 }
 
 /* Dark Mode Opacities */
