@@ -86,50 +86,31 @@ function ButtonPalette() {
       </section>
 
       <Section title="Button Behaviour" description="A table showing each button variant and their states.">
-        <div className="overflow-x-auto rounded-lg border border-border bg-surface">
-          <table className="w-full min-w-[760px] border-collapse">
-            <thead>
-              <tr className="border-b border-border bg-surface-muted text-left">
-                <th scope="col" className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
-                  Variant
-                </th>
-                <th scope="col" className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
-                  Default
-                </th>
-                <th scope="col" className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
-                  Hover
-                </th>
-                <th scope="col" className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
-                  Focus
-                </th>
-                <th scope="col" className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
-                  Disabled
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {PALETTE_VARIANTS.map((variant) => (
-                <tr key={variant.variant} className="border-b border-border last:border-b-0">
-                  <th scope="row" className="px-5 py-6 text-left align-middle">
-                    <span className="block font-display text-2xl font-medium text-foreground">{variant.label}</span>
-                    <Caption>{variant.use}</Caption>
-                  </th>
-                  <td className="px-5 py-6 align-middle">
-                    <StateButton variant={variant} state="default" />
-                  </td>
-                  <td className="px-5 py-6 align-middle">
-                    <StateButton variant={variant} state="hover" />
-                  </td>
-                  <td className="px-5 py-6 align-middle">
-                    <StateButton variant={variant} state="focus" />
-                  </td>
-                  <td className="px-5 py-6 align-middle">
-                    <StateButton variant={variant} state="disabled" />
-                  </td>
-                </tr>
+        <div className="rounded-lg border border-border bg-surface">
+          <div className="hidden grid-cols-5 border-b border-border bg-surface-muted md:grid">
+            {["Variant", "Default", "Hover", "Focus", "Disabled"].map((h) => (
+              <span key={h} className="px-5 py-4 font-sans text-xs cyd-tracked text-foreground-muted">
+                {h}
+              </span>
+            ))}
+          </div>
+          {PALETTE_VARIANTS.map((variant) => (
+            <div
+              key={variant.variant}
+              className="grid grid-cols-2 gap-4 border-b border-border px-5 py-6 last:border-b-0 sm:grid-cols-4 md:grid-cols-5 md:items-center md:gap-0 md:px-0"
+            >
+              <div className="col-span-2 sm:col-span-4 md:col-span-1 md:px-5">
+                <span className="block font-display text-2xl font-medium text-foreground">{variant.label}</span>
+                <Caption>{variant.use}</Caption>
+              </div>
+              {(["default", "hover", "focus", "disabled"] as const).map((state) => (
+                <div key={state} className="flex flex-col items-start gap-2 md:px-5">
+                  <span className="font-sans text-[0.6rem] cyd-tracked text-foreground-muted md:hidden">{state}</span>
+                  <StateButton variant={variant} state={state} />
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          ))}
         </div>
       </Section>
 
