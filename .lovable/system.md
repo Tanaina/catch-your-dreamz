@@ -13,8 +13,7 @@ loud, never neon, never corporate SaaS.
 
 ## Hard constraints
 
-1. **Tokens, never literals.** No hex, rgb, hsl, or arbitrary `px` for anything the
-   token set covers. Use the semantic classes (`bg-surface`, `text-foreground-muted`,
+1. **Tokens, never literals.** No hex, rgb, hsl, or arbitrary `px` for anything the token set covers. Use the semantic classes (`bg-surface`, `text-foreground-muted`,
    `border-border`, `bg-primary`) in product code; the raw scales
    (`bg-cyd-gold-400`, `bg-cyd-ink-900`) exist to define semantics, not to be
    sprinkled through features. New value needed? Add a token in
@@ -50,7 +49,6 @@ scatter data, not design values.
 `src/design-system/assets/logos/cyd-logo-circle.jpg` is the canonical mark: the full circular
 emblem. Always render `<Logo />`; never redraw,
 recolour, or place it on a white plate.
-
 
 ## Typefaces
 
