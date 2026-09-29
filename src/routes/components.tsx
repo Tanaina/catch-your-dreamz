@@ -183,23 +183,23 @@ function Components() {
             <Snippet code={`<Field label="Email" error="Enter a valid email address.">\n  <Input />\n</Field>`} />
           </Block>
 
-          <Block id="card" title="Card" blurb="Surface for grouped content — products, orders, settings.">
+          <Block id="card" title="Cards" blurb="Surface for grouped content — products, orders, settings.">
             <div className="grid gap-4 md:grid-cols-3">
               {(["elevated", "outline", "ghost"] as const).map((variant) => (
                 <div key={variant} className="flex flex-col gap-2">
                   <Card variant={variant}>
                     <CardHeader>
-                      <CardTitle>{variant === "elevated" ? "Amethyst" : variant === "outline" ? "Opalite" : "Tiger's Eye"}</CardTitle>
+                      <CardTitle>{variant === "elevated" ? "Medium Suncatcher, Amethyst" : variant === "outline" ? "Small Suncatcher, Opal" : "Moon Stand, Tiger's Eye"}</CardTitle>
                       <CardDescription>
-                        {variant === "elevated" ? <>Function: Hanging<br />Size: Small</> : variant === "outline" ? <>Function: Hanging<br />Size: Medium</> : <>Function: Stand<br />Size: Small</>}
+                        {variant === "elevated" ? <>Function: Hanging<br />Size: Medium // cm X cm</> : variant === "outline" ? <>Function: Hanging<br />Size: Small // cm X cm</> : <>Function: Stand<br />Size: Medium // cm x cm</>}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      {variant === "elevated" ? <>Copper wire and 24k gold connectors.<br />Glass minor stones.</> : variant === "outline" ? <>Silver wire and connectors.<br />Moonstone minor stones.</> : <>24k Gold wire and connectors.<br />Elegant Gold Amulets.<br />One of Eight made this collection.</>}
+                      {variant === "elevated" ? <>copper wire & 24k gold connectors<br />gold amulets<br /><br />wrapped stones: amethyst & glass</> : variant === "outline" ? <>silver wire & connectors<br />silver amulets<br /><br />wrapped stones: opal and glass</> : <>24k gold wire & connectors<br />gold amulets<br />wrapped stones: tiger's eye &amp; glass</>}
                     </CardContent>
                     <CardFooter>
-                      <Button size="sm">{variant === "elevated" ? "$40.00" : variant === "outline" ? "$50.00" : "$65.00"}</Button>
-                      <Badge tone="neutral">8 left</Badge>
+                      <Button size="sm">{variant === "elevated" ? "$ 50" : variant === "outline" ? "$ 35" : "$ 45"}</Button>
+                      <Badge tone="neutral">{variant === "elevated" ? "4 LEFT" : variant === "outline" ? "2 LEFT" : "2 LEFT"}</Badge>
                     </CardFooter>
                   </Card>
                   <Caption>variant="{variant}"</Caption>
