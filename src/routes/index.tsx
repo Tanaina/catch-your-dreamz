@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Badge,
-  Button,
   Card,
   CardContent,
   CardDescription,
@@ -98,4 +97,9 @@ function Overview() {
             </Link>
           ))}
         </div>
+      </div>
+    </Shell>
+  );
+}
+
 
