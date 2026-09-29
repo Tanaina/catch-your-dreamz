@@ -314,7 +314,7 @@
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 /*middle banner*/
@@ -331,7 +331,7 @@
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.6;
+  opacity: 1;
   mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 }
 
